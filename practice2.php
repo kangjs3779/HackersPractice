@@ -23,7 +23,21 @@
 		?>
 	</p>
 
+	<h4>
+		isset() : 뱐수가 존재하는지 안하는지 확인하는 코드
+	</h4>
+
 	<p>
+		<?php
+			$num2 = 5;
+			$result = isset($num1);
+
+			if($result) {
+				echo "맞음";
+			} else {
+				echo "틀림";
+			}
+		?>
 
 	</p>
 
