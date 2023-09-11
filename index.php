@@ -1,3 +1,7 @@
+<?php
+include_once "./controllers/MainController.php";
+$mainController = new MainContoroller();
+?>
 <!doctype html>
 <html lang="en">
  <head>
@@ -15,7 +19,7 @@
 		안녕. <?php echo $_GET['name']; ?>님
 	</h3>
 	
-	<form action="index.php">
+	<form method="post" action="index.php">
 		<input type="text" name="name">
 		<input type="submit">
 	</form>
@@ -44,6 +48,9 @@
 		echo nl2br($str);
 	?>
 
+    <?php 
+        print_r($mainController->getList());
+    ?>
 	<ol>
 		<li><a href="practice1.php">연습1</a></li>
 		<li><a href="practice2.php">연습2 - 조건문</a></li>
