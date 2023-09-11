@@ -46,8 +46,7 @@
 
 	<ol>
 		<li><a href="practice1.php">연습1</a></li>
-		<li><a href="practice2.php">연습2</a></li>
-
+		<li><a href="practice2.php">연습2 - 조건문</a></li>
 	</ol>
 	
  </body>

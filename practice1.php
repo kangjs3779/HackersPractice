@@ -1,3 +1,18 @@
+<?php
+# DB 연동해서 데이터 불러오기
+#MVC
+#Model
+#View
+#Controller
+$list = [
+	['id' => 1, 'name' => "일" ],
+	['id' => 2, 'name' => "이" ]
+];
+
+
+//$s_asd = ["a", "b"];
+
+?>
 <!doctype html>
 <html lang="en">
  <head>
@@ -18,8 +33,16 @@
 	</ol>
 	
 	<h2>
+		연습1<br>
+		<?php foreach($list as $row) { ?>
+		<?=$row['id']?>/<?=$row['name']?><br>
+		<?php } ?>
+	</h2>
+
+	<h2>
+		연습2<br>
 		<?php
-			echo $_GET['id'];
+			var_dump('11111');
 		?>
 	</h2>
 	<p>
