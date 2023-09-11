@@ -14,7 +14,11 @@
 	<h3>
 		안녕. <?php echo $_GET['name']; ?>님
 	</h3>
-
+	
+	<form action="index.php">
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
 	<ol>
 		<li><a href="index.php?mode=step_01">약관동의</a></li>
 		<li><a href="index.php?mode=step_02">본인확인</a></li>
@@ -26,7 +30,25 @@
 	<p>
 		function test
 	</p>
+	
+	<pre>
+		문자열 확인 함수 strlen()
+	</pre>
+	<?php
+		$str = "hello.
+		my name is jisoo";
+		echo strlen($str);
+	?>
 
+	<?php
+		echo nl2br($str);
+	?>
+
+	<ol>
+		<li><a href="practice1.php">연습1</a></li>
+		<li><a href="practice2.php">연습2</a></li>
+
+	</ol>
 	
  </body>
 </html>
