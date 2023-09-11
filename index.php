@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+ </head>
+ <body>
+	<h1>회원가입 페이지 1단계</h1>
+	
+	<h3>
+		안녕. <?php echo $_GET['name']; ?>님
+	</h3>
+
+	<ol>
+		<li><a href="index.php?mode=step_01">약관동의</a></li>
+		<li><a href="index.php?mode=step_02">본인확인</a></li>
+		<li><a href="index.php?mode=step_03">회원정보입력</a></li>
+		<li><a href="index.php?mode=regist">회원가입처리 단계</a></li>
+		<li><a href="index.php?mode=complete">회원가입완료</a></li>
+	</ol>
+
+	<p>
+		function test
+	</p>
+
+	
+ </body>
+</html>
