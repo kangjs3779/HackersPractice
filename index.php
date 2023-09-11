@@ -50,6 +50,12 @@
 		<li><a href="practice3.php">연습3 - 반복문</a></li>
         <li><a href="practice4.php">연습4 - 배열</a></li>
 	</ol>
+
+    <form action="Create.php" method="post">
+        <input type="text" name="title" placeholder="title">
+        <input type="text" name="description" placeholder="description">
+        <input type="submit">
+    </form>
 	
  </body>
 </html>
