@@ -29,6 +29,7 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head><body>
 <!-- skip nav -->
@@ -452,10 +453,9 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 본 약관은 2012년 11월 6일부터 시행됩니다.
 2010년 4월 23일부터 시행되던 종전의 약관은 본 약관으로 대체됩니다. 
 					</div>
-					<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
-					<div class="mt10">
+					<div cl	ass="mt10">
 						<label class="input-sp">
-							<input type="checkbox"/>
+							<input type="checkbox" class="agree-check" id="agree-check1"/>
 							<span class="input-txt">약관에 동의합니다.</span>
 						</label>
 					</div>
@@ -622,7 +622,7 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 					<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
 					<div class="mt10">
 						<label class="input-sp">
-							<input type="checkbox"/>
+							<input type="checkbox" class="agree-check" id="agree-check2"/> 
 							<span class="input-txt">약관에 동의합니다.</span>
 						</label>
 					</div>
@@ -631,13 +631,13 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 
 			<div class="all-agree-box">
 				<label class="input-sp">
-					<input type="checkbox"/>
-					<span class="input-txt">상위 이용약관 및 개인정보 취급방침에 모두 동의합니다.</span>
+					<input type="checkbox" id="agree-all"/>
+					<span class="input-txt" >상위 이용약관 및 개인정보 취급방침에 모두 동의합니다.</span>
 				</label>
 			</div>
 
 			<div class="box-btn">
-				<a href="#" class="btn-l">다음단계 (휴대폰인증)</a>
+				<a href="/homework/01_회원가입_02_본인확인.html" class="btn-l" id="next-step-btn">다음단계 (휴대폰인증)</a>
 			</div>
 
 		</div>
@@ -666,5 +666,7 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 		</div>
 	</div>
 </div>
+
+<script src="/js/step01.js"></script>
 </body>
 </html>
