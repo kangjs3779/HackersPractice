@@ -1,5 +1,5 @@
 <?php
-include_once "./controllers/MainController.php";
+include_once "./controllers/TestController.php";
 $mainController = new MainContoroller();
 ?>
 <!doctype html>

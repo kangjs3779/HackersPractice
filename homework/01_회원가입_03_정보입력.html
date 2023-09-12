@@ -28,6 +28,7 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>
@@ -186,30 +187,29 @@
 					<tbody>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이름</th>
-							<td><input type="text" class="input-text" style="width:302px"/></td>
+							<td><input type="text" class="input-text" id="name-input" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>아이디</th>
-							<td><input type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><a href="#" class="btn-s-tin ml10">중복확인</a></td>
+							<td><input type="text" class="input-text" id="id-input" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><a href="#" class="btn-s-tin ml10">중복확인</a></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호</th>
-							<td><input type="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
+							<td><input type="password" class="input-text" id="pw-input" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-							<td><input type="password" class="input-text" style="width:302px"/></td>
+							<td><input type="password" class="input-text" id="pw-check-input" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이메일주소</th>
 							<td>
-								<input type="text" class="input-text" style="width:138px"/> @ <input type="text" class="input-text" style="width:138px"/>
+								<input type="text" class="input-text" id="email-input" style="width:138px"/> @ <input type="text" class="input-text" style="width:138px"/>
 								<select class="input-sel" style="width:160px">
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+									<option value="">naver.com</option>
+									<option value="">gmail.com</option>
+									<option value="">kakao.com</option>
+									<option value="">직접입력</option>
 								</select>
 							</td>
 						</tr>
@@ -275,7 +275,7 @@
 				</table>
 
 				<div class="box-btn">
-					<a href="#" class="btn-l">회원가입</a>
+					<button href="/homework/01_회원가입_04_회원가입완료.html" class="btn-l" id="join-btn">회원가입</button>
 				</div>
 			</div>
 		</div>
@@ -304,5 +304,7 @@
 		</div>
 	</div>
 </div>
+
+<script src="/js/step03.js"></script>
 </body>
 </html>

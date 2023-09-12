@@ -1,3 +1,13 @@
+<?php
+session_start();
+$_SESSION['username'] = 'testuser';
+$_SESSION['userpw'] = 'testPW';
+$_SESSION['veriCode'] = '12345';
+
+echo "username : ".$_SESSION['username']."<br>";
+echo "userpw : ".$_SESSION['userpw']."<br>";
+echo "veriCode : ".$_SESSION['veriCode']."<br>";
+?>
 <!doctype html>
 <html lang="en">
  <head>
