@@ -10,7 +10,6 @@ function agreeCheck() {
     } else {
         alert("약관에 모두 동의해주세요.");
         event.preventDefault();
-        console.log(agreeCheck2 + ", " + agreeCheck1);
     }
 }
 
@@ -44,10 +43,6 @@ $(".agree-check").change(function() {
     }
 })
 
-//다음단계 버튼을 클릭하면 동의 확인 후 다음단계로 진행
-$("#next-step-btn").click(function() {
-    agreeCheck();
-})
 
 //약관 동의에 체크하면 true로 변경
 $("#agree-check1").change(function() {
@@ -56,4 +51,9 @@ $("#agree-check1").change(function() {
 
 $("#agree-check2").change(function() {
     agreeCheck2 = $(this).is(":checked");
+})
+
+//다음단계 버튼을 클릭하면 동의 확인 후 다음단계로 진행
+$("#next-step-btn").click(function() {
+    agreeCheck();
 })

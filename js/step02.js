@@ -35,7 +35,7 @@ $("#send-veri-code-btn").click(function() {
                 success: function(data) {
                     //성공하면 인증번호를 변수에 넣어줌
                     sessionVeriCode = data.veriCode;
-                    alert("인증에 성공하였습니다. 인증번호는 " + data.veriCode + " 입니다.")
+                    alert("인증에 성공하였습니다. 인증번호는 " + sessionVeriCode + " 입니다.")
                 },
                 error: function() {
                     alert("인증번호 발송을 하지 못했습니다.")
@@ -52,9 +52,11 @@ $("#check-veri-code-btn").click(function() {
     let checkVeriCode = inputVeriCode == sessionVeriCode;
 
     if(checkVeriCode) {
-        window.location.href = "http://practice.hackers.com/homework/01_회원가입_03_정보입력.html"
+        window.location.href = "http://practice.hackers.com/member/index.php?mode=step_03";
     } else {
         alert("인증번호가 틀렸습니다.")
     }
 
 });
+
+//test
