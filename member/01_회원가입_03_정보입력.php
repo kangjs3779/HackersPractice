@@ -1,3 +1,11 @@
+<?php
+include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+echo 'session:';
+print_r($_SESSION);
+print_r($_COOKIE);
+//print_r($_SERVER);
+//include "../controllers/Step02Controller.php";
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
@@ -60,98 +68,104 @@
 						<col style="width:15%"/>
 						<col/>
 					</colgroup>
-
-					<tbody>
-						<tr>
-							<th scope="col"><span class="icons">*</span>이름</th>
-							<td><input type="text" class="input-text" id="name-input" style="width:302px"/></td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>아이디</th>
-							<td><input type="text" class="input-text" id="id-input" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><button id="duplicate-btn" class="btn-s-tin ml10">중복확인</button></td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>비밀번호</th>
-							<td><input type="password" class="input-text pw" id="pw-input" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-							<td><input type="password" class="input-text pw" id="pw-check-input" style="width:302px"/></td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>이메일주소</th>
-							<td>
-								<input type="text" class="input-text" id="email-input" style="width:138px"/> @ <input type="text" id="email-address-input" class="input-text" style="width:138px" readonly/>
-								<select class="input-sel select-address" style="width:160px">
-									<option value="naver.com">naver.com</option>
-									<option value="gmail.com">gmail.com</option>
-									<option value="kakao.com">kakao.com</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
-							<td>
-								<input type="text" class="input-text" style="width:50px"/> - 
-								<input type="text" class="input-text" style="width:50px"/> - 
-								<input type="text" class="input-text" style="width:50px"/>
-							</td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons"></span>일반전화 번호</th>
-							<td><input type="text" class="input-text" style="width:88px"/> - <input type="text" class="input-text" style="width:88px"/> - <input type="text" class="input-text" style="width:88px"/></td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>주소</th>
-							<td>
-								<p >
-									<label>우편번호 <input type="text" id="postcodeInput" class="input-text ml5 address" style="width:242px" readonly /></label><button type="button" class="btn-s-tin ml10" id="address-btn">주소찾기</button>
-								</p>
-								<p class="mt10">
-									<label>기본주소 <input type="text" id="roadAddressInput" class="input-text ml5 address" style="width:719px" readonly/></label>
-								</p>
-								<p class="mt10">
-									<label>상세주소 <input type="text" id="extraAddressInput" class="input-text ml5 address" style="width:719px"/></label>
-								</p>
-							</td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>SMS수신</th>
-							<td>
-								<div class="box-input">
-									<label class="input-sp">
-										<input type="radio" name="radio" id="" checked="checked" value="yes"/>
-										<span class="input-txt">수신함</span>
-									</label>
-									<label class="input-sp">
-										<input type="radio" name="radio" id="" value="no" />
-										<span class="input-txt">미수신</span>
-									</label>
-								</div>
-								<p>SMS수신 시, 해커스의 혜택 및 이벤트 정보를 받아보실 수 있습니다.</p>
-							</td>
-						</tr>
-						<tr>
-							<th scope="col"><span class="icons">*</span>메일수신</th>
-							<td>
-								<div class="box-input">
-									<label class="input-sp">
-										<input type="radio" name="radio2" id="" checked="checked" value="yes" />
-										<span class="input-txt">수신함</span>
-									</label>
-									<label class="input-sp">
-										<input type="radio" name="radio2" id="" value="no"/>
-										<span class="input-txt">미수신</span>
-									</label>
-								</div>
-								<p>메일수신 시, 해커스의 혜택 및 이벤트 정보를 받아보실 수 있습니다.</p>
-							</td>
-						</tr>
-					</tbody>
+					<form action="/member/index.php?mode=regist" id="member-info" method="post">
+						<tbody>
+							<tr>
+								<th scope="col"><span class="icons">*</span>이름</th>
+								<td><input name="name" type="text" class="input-text" id="name-input" style="width:302px"/></td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>아이디</th>
+								<td><input name="id" type="text" class="input-text" id="id-input" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><button type="button" id="duplicate-btn" class="btn-s-tin ml10">중복확인</button></td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>비밀번호</th>
+								<td><input type="password" name="password" class="input-text pw" id="pw-input" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
+								<td><input type="password" class="input-text pw" id="pw-check-input" style="width:302px"/></td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>이메일주소</th>
+								<td>
+									<input type="text" class="input-text" name="email" id="email-input" style="width:138px"/> @ <input type="text" name="emailAddress" id="email-address-input" class="input-text" style="width:138px" readonly/>
+									<select class="input-sel select-address" style="width:160px">
+										<option value="naver.com">naver.com</option>
+										<option value="gmail.com">gmail.com</option>
+										<option value="kakao.com">kakao.com</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
+								<td>
+									<input type="text" class="input-text" id="phone1" value="<?php echo isset($_SESSION['veriCode']) ? $_SESSION['veriCode'] : '없음'; ?>" style="width:50px"/> - 
+									<input type="text" class="input-text" id="phone2" value="<?php echo $_SESSION['veriCode']?>" style="width:50px"/> - 
+									<input type="text" class="input-text" id="phone3" style="width:50px"/>
+								</td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons"></span>일반전화 번호</th>
+								<td>
+									<input type="text" class="input-text" style="width:88px"/> - 
+									<input type="text" class="input-text" style="width:88px"/> - 
+									<input type="text" class="input-text" style="width:88px"/>
+									<input type="text" name="homeNumber" />
+								</td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>주소</th>
+								<td>
+									<p >
+										<label>우편번호 <input type="text" name="postcode" id="postcodeInput" class="input-text ml5 address" style="width:242px" readonly /></label><button type="button" class="btn-s-tin ml10" id="address-btn">주소찾기</button>
+									</p>
+									<p class="mt10">
+										<label>기본주소 <input type="text" name="address" id="roadAddressInput" class="input-text ml5 address" style="width:719px" readonly/></label>
+									</p>
+									<p class="mt10">
+										<label>상세주소 <input type="text" name="detailAddress" id="extraAddressInput" class="input-text ml5 address" style="width:719px"/></label>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>SMS수신</th>
+								<td>
+									<div class="box-input">
+										<label class="input-sp">
+											<input type="radio" name="sendSMS" checked="checked" value="yes" class="sms"/>
+											<span class="input-txt">수신함</span>
+										</label>
+										<label class="input-sp">
+											<input type="radio" name="sendSMS" value="no" class="sms" />
+											<span class="input-txt">미수신</span>
+										</label>
+									</div>
+									<p>SMS수신 시, 해커스의 혜택 및 이벤트 정보를 받아보실 수 있습니다.</p>
+								</td>
+							</tr>
+							<tr>
+								<th scope="col"><span class="icons">*</span>메일수신</th>
+								<td>
+									<div class="box-input">
+										<label class="input-sp">
+											<input type="radio" name="sendEmail" checked="checked" value="yes"  class="email"/>
+											<span class="input-txt">수신함</span>
+										</label>
+										<label class="input-sp">
+											<input type="radio" name="sendEmail" value="no" class="email"/>
+											<span class="input-txt">미수신</span>
+										</label>
+									</div>
+									<p>메일수신 시, 해커스의 혜택 및 이벤트 정보를 받아보실 수 있습니다.</p>
+								</td>
+							</tr>
+						</tbody>
+					</form>
 				</table>
 
 				<div class="box-btn">
-					<button href="/homework/01_회원가입_04_회원가입완료.html" class="btn-l" id="join-btn">회원가입</button>
+					<button type="submit" form="member-info" class="btn-l" id="join-btn">회원가입</button>
 				</div>
 			</div>
 		</div>
@@ -160,5 +174,6 @@
 
 <script src="/js/daumPostCode.js"></script>
 <script src="/js/step03.js?t=<?=time()?>"></script>
+<script src="/ajax/step03Ajax.js?t=<?=time()?>"></script>
 </body>
 </html>

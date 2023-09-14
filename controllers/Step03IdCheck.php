@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
 
 //이런 회원정보가 세션에 저장됨(DB같은거)
 $_SESSION['userList'] = array(
@@ -20,7 +20,7 @@ if(in_array($idInput, $_SESSION['userList'])) {
     //없으면
     $_SESSION['check'] = true;
     //session에 값을 저장함
-    $_SESSION['idInput'] = $idInput;
+    // $_SESSION['idInput'] = $idInput;
 }
 
 
@@ -28,7 +28,7 @@ if(in_array($idInput, $_SESSION['userList'])) {
 
 //session값을 JSON으로 변환함
 $responseData = [
-    'idInput' => $_SESSION['idInput'],
+    // 'idInput' => $_SESSION['idInput'],
     'check' => $_SESSION['check']
 ];
 

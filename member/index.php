@@ -1,5 +1,6 @@
 <?php
 //MainController 역할
+include_once __DIR__.'/commonFile/session.php';
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
@@ -19,5 +20,10 @@ if($mode == 'step_01') {
     readFileProcess($fileName);
 } else if($mode == 'step_03') {
     $fileName = './01_회원가입_03_정보입력.php';
+    readFileProcess($fileName);
+} else if($mode == 'regist') {
+    include_once '../controllers/JoinProcess.php';
+} else if($mode == 'complete') {
+    $fileName = './01_회원가입_04_회원가입완료.php';
     readFileProcess($fileName);
 }

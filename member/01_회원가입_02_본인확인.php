@@ -1,6 +1,12 @@
 <?php
 include_once "./member/index.php";
 include_once "./commonFile/header.php";
+include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+echo 'session:';
+print_r($_SESSION);
+print_r($_COOKIE);
+//print_r($_SERVER);
+//include "../controllers/Step02Controller.php";
 ?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -88,6 +94,7 @@ include_once "./commonFile/header.php";
 		</div>
 
 	<script src="/js/step02.js?t=<?=time()?>"></script>
+	<script src="/ajax/step02Ajax.js?t=<?=time()?>"></script>
 </body>
 
 </html>

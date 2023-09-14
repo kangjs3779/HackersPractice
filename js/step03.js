@@ -4,20 +4,18 @@ let checks = {
     idCheck: false,
     pwCheck: false,
     emailCheck: false,
-    phoneCheck: false,
-    postCodeCheck: false,
-    sendSmsCheck: false,
-    sendEmailCheck: false
+    postCodeCheck: false
 };
   
 //위 배열이 모두 true인지 확인하는 함수
 function enableJoin() {
     if (Object.values(checks).every(check => check)) {
         //배열이 모두 true이면 진행
-        window.location.href = "http://practice.hackers.com/homework/01_회원가입_04_회원가입완료.html";
+        window.location.href = "http://practice.hackers.com/member/index.php?mode=regist";
     } else {
         //요소 중 하나라도 false이면 진행하지 않음
-        alert("필수 입력칸을 모두 채워주세요.")
+        alert("필수 입력칸을 모두 채워주세요.");
+        event.preventDefault();
     }
 }
 
@@ -37,60 +35,32 @@ function Reg(exp, target) {
 }
 
 // 이름 입력칸 확인
-$("#name-input").blur(function() {
-    //이름 유효성 검사 : '가-힣'까지, 두 글자 이상 작성해야 함
+$("#name-input").blur(function(e) {
     let nameInput = $("#name-input").val();
-    let exp = /^[가-힣]{2,}$/;
     
-    let check = Reg(exp, nameInput);
-
-    if(check) {
-        checks['nameCheck'] = true;
-    } else {
-        alert("올바른 이름을 입력해 주세요");
-        $("#name-input").val("");
-        checks['nameCheck'] = false;
+    if (nameInput) {
+        //이름 유효성 검사 : '가-힣'까지, 두 글자 이상 작성해야 함
+        let exp = /^[가-힣]{2,}$/;
+    
+        let check = Reg(exp, nameInput);
+    
+        if(check) {
+            checks['nameCheck'] = true;
+        } else {
+            alert("올바른 이름을 입력해 주세요.");
+            $("#name-input").val("");
+            $("#name-input").focus();
+            checks['nameCheck'] = false;
+        }
     }
 })
+
 
 //이름 입력칸에 키업이 발생하면?
 $("#name-input").on("keyup", function() {
     checks['nameCheck'] = false;
 })
 
-
-// 아이디 입력칸 확인
-$("#id-input").blur(function() {
-    //아이디 유효성 검사 : 영문자로 시작하는 4~15자의 영문소문자, 숫자
-    let exp = /^[a-z][a-z0-9]{3,15}$/;
-    let idInput = $("#id-input").val();
-
-    let check = Reg(exp, idInput);
-
-    if(check) {
-        //유효성 검사 후 중복확인 진행
-        $("#duplicate-btn").click(function() {
-            $.ajax("/controllers/Step03Controller.php", {
-                method: "post",
-                dataType: "json",
-                data: {idInput : idInput},
-                success: function(data) {
-                    if(data.check) {
-                        alert("사용 가능한 아이디 입니다.")
-                        checks['idCheck'] = true;
-                    } else {
-                        alert("이미 사용 중인 아이디 입니다.")
-                    }
-                }
-            })
-
-        })
-    } else {
-        alert("아이디는 영문자로 시작하는 4~15자의 영문소문자, 숫자만 가능합니다.");
-        $("#id-input").val("");
-        checks['idCheck'] = false;
-    }
-})
 
 //아이디 입력칸에 키업이 발생하면?
 $("#id-input").on("keyup", function() {
@@ -100,12 +70,14 @@ $("#id-input").on("keyup", function() {
 //비밀번호 유효성검사
 $("#pw-input").blur(function() {
     let pwInput = $("#pw-input").val();
-    let exp = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,15}$/i;
-
-    let check = Reg(exp, pwInput);
-
-    if(!check) {
-        alert("비밀번호는 8-15자의 영문자/숫자의 혼합이어야 합니다.");
+    if(pwInput) {
+        let exp = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,15}$/i;
+    
+        let check = Reg(exp, pwInput);
+    
+        if(!check) {
+            alert("비밀번호는 8-15자의 영문자/숫자의 혼합이어야 합니다.");
+        }
     }
 })
 
@@ -146,9 +118,11 @@ $("#email-input").blur(function() {
 
 //이메일 주소 선택
 $(".select-address").on("change", function() {
-    let option = $(this).val();
-    $("#email-address-input").val(option);
+    let address = $(this).val();
+    $("#email-address-input").val(address);
 })
+
+
 
 //주소 검색
 $("#address-btn").click(function() {
@@ -157,3 +131,48 @@ $("#address-btn").click(function() {
     });
 })
 
+//휴대폰 번호
+// $(".phone").on("change", function() {
+//     let num1 = $("#phone1").val();
+//     let num2 = $("#phone2").val();
+//     let num3 = $("#phone3").val();
+//     let fullNum = num1 + num2 + num3;
+//     let exp = /^010\d{8}$/;
+//     let check = Reg(exp, fullNum)
+
+//     console.log(num1 + num2 + num3);
+//     console.log("full : " + fullNum);
+//     console.log("check : " + check);
+//     if(check) {
+//         checks['phoneCheck'] = true;
+//     } else {
+//         alert("휴대폰 번호를 올바르게 입력해주세요.");
+//         checks['phoneCheck'] = false;
+//     }
+// })
+
+//휴대폰 번호에 키업이 발생하면 초기화
+// $(".phone").on("keyup", function() {
+//     checks['phoneCheck'] = false;
+// })
+
+// //SMS수신
+// $(".sms").on("change", function() {
+//     let answer = $(".sms:checked").val();
+//     console.log(answer);
+
+//     if(answer === 'yes') {
+//     } else if(answer === 'no') {
+//     }
+// })
+
+// //email수신
+// $(".email").on("change", function() {
+//     let email = $(".email:checked").val();
+
+//     if(email === 'yes') {
+
+//     } else if(email === 'no') {
+
+//     }
+// })
