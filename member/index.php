@@ -2,10 +2,7 @@
 // MainController 역할
 // 모든 include는 여기에 작성할 것
 include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
-
-//test
-echo "멤버 인덱스 실행"; 
-echo "<br>";
+include_once "../key.php";
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];

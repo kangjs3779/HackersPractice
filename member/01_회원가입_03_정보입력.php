@@ -82,12 +82,13 @@
 							<tr>
 								<th scope="col"><span class="icons">*</span>이메일주소</th>
 								<td>
-									<input type="text" class="input-text" name="email" id="email-input" style="width:138px"/> @ <input type="text" name="emailAddress" id="email-address-input" class="input-text" style="width:138px" readonly/>
+									<input type="text" class="input-text" id="email-input" style="width:138px"/> @ <input type="text" id="email-address-input" class="input-text" style="width:138px" readonly/>
 									<select class="input-sel select-address" style="width:160px">
 										<option value="naver.com">naver.com</option>
 										<option value="gmail.com">gmail.com</option>
 										<option value="kakao.com">kakao.com</option>
 									</select>
+									<input type="hidden" name='email' id="fullEmail">
 								</td>
 							</tr>
 							<tr>

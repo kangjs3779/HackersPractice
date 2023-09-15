@@ -15,7 +15,7 @@
 					
 					<ul class="nav-main-lst">
 						<li class="mnu">
-							<a href="#">일반직무rr</a>
+							<a href="#">일반직무</a>
 							<ul class="nav-sub-lst">
 								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>

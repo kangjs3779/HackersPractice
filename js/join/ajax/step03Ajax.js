@@ -11,13 +11,13 @@ $("#id-input").blur(function(e) {
             //유효성 검사 후 중복확인 진행
             let data = {idInput : idInput};
 
-            for (let key in data) {
-                if (data.hasOwnProperty(key)) {
-                  console.log(key + ": " + data[key]);
-                }
-              }
+            // for (let key in data) {
+            //     if (data.hasOwnProperty(key)) {
+            //       console.log(key + ": " + data[key]);
+            //     }
+            //   }
             $("#duplicate-btn").click(function() {
-
+                console.log("click");
                 $.ajax("/ajax/Step03IdCheck.php", {
                     method: "post",
                     dataType: "json",
@@ -32,12 +32,14 @@ $("#id-input").blur(function(e) {
                             $("#id-input").focus();
                             alert("이미 사용 중인 아이디 입니다.")
                         }
+
+                        console.log(data);
                     }
                 })
             })
 
         } else if(!check) {
-            
+
             alert("아이디는 영문자로 시작하는 4~15자의 영문소문자, 숫자만 가능합니다.");
             $("#id-input").val("");
             $("#id-input").focus();

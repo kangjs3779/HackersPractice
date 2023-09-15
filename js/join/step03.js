@@ -88,12 +88,14 @@ $("#pw-check-input").blur(function() {
 
     let check = pwInput == pwCheckInput;
 
-    if(check) {
-        alert("비밀번호 확인이 되었습니다.");
-        checks['pwCheck'] = true;
-    } else {
-        alert("비밀번호가 다릅니다.");
-        checks['pwCheck'] = false;
+    if(pwCheckInput) {
+        if(check) {
+            alert("비밀번호 확인이 되었습니다.");
+            checks['pwCheck'] = true;
+        } else {
+            alert("비밀번호가 다릅니다.");
+            checks['pwCheck'] = false;
+        }
     }
 })
 
@@ -103,8 +105,10 @@ $(".pw").on("keyup", function() {
 })
 
 //이메일 입력
+
+let emailInput = '';
 $("#email-input").blur(function() {
-    let emailInput = $("#email-input").val();
+    emailInput = $("#email-input").val();
     let check = emailInput == '';
 
     if(!check) {
@@ -120,7 +124,11 @@ $("#email-input").blur(function() {
 $(".select-address").on("change", function() {
     let address = $(this).val();
     $("#email-address-input").val(address);
+
+    //이메일 합치기
+    $("#fullEmail").val(emailInput + "@" + address);
 })
+
 
 
 //주소 검색
@@ -139,49 +147,3 @@ $(".homeNum").on("keyup", function() {
     })
     $("#fullHomeNum").val(fullNum);
 })
-
-//휴대폰 번호
-// $(".phone").on("change", function() {
-//     let num1 = $("#phone1").val();
-//     let num2 = $("#phone2").val();
-//     let num3 = $("#phone3").val();
-//     let fullNum = num1 + num2 + num3;
-//     let exp = /^010\d{8}$/;
-//     let check = Reg(exp, fullNum)
-
-//     console.log(num1 + num2 + num3);
-//     console.log("full : " + fullNum);
-//     console.log("check : " + check);
-//     if(check) {
-//         checks['phoneCheck'] = true;
-//     } else {
-//         alert("휴대폰 번호를 올바르게 입력해주세요.");
-//         checks['phoneCheck'] = false;
-//     }
-// })
-
-//휴대폰 번호에 키업이 발생하면 초기화
-// $(".phone").on("keyup", function() {
-//     checks['phoneCheck'] = false;
-// })
-
-// //SMS수신
-// $(".sms").on("change", function() {
-//     let answer = $(".sms:checked").val();
-//     console.log(answer);
-
-//     if(answer === 'yes') {
-//     } else if(answer === 'no') {
-//     }
-// })
-
-// //email수신
-// $(".email").on("change", function() {
-//     let email = $(".email:checked").val();
-
-//     if(email === 'yes') {
-
-//     } else if(email === 'no') {
-
-//     }
-// })

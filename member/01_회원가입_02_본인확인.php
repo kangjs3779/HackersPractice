@@ -1,14 +1,3 @@
-<?php
-include_once "./member/index.php";
-// include_once "./commonFile/header.php";
-// include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
-// include_once "../controllers/Step02PhoneNumCheck.php";
-echo 'step 2 :';
-print_r($_SESSION);
-// print_r($_COOKIE);
-//print_r($_SERVER);
-//include "../controllers/Step02Controller.php";
-?>
 <!DOCTYPE html
 	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
