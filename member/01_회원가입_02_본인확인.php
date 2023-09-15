@@ -1,10 +1,11 @@
 <?php
 include_once "./member/index.php";
-include_once "./commonFile/header.php";
-include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
-echo 'session:';
+// include_once "./commonFile/header.php";
+// include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+// include_once "../controllers/Step02PhoneNumCheck.php";
+echo 'step 2 :';
 print_r($_SESSION);
-print_r($_COOKIE);
+// print_r($_COOKIE);
 //print_r($_SERVER);
 //include "../controllers/Step02Controller.php";
 ?>
@@ -93,8 +94,8 @@ print_r($_COOKIE);
 			</div>
 		</div>
 
-	<script src="/js/step02.js?t=<?=time()?>"></script>
-	<script src="/ajax/step02Ajax.js?t=<?=time()?>"></script>
+	<script src="/js/join/step02.js?t=<?=time()?>"></script>
+	<script src="/js/join/ajax/step02Ajax.js?t=<?=time()?>"></script>
 </body>
 
 </html>

@@ -1,12 +1,12 @@
 <?php
 
-echo "111111";
-exit;
-if($_GET['mode']=="step_01") { 
-    header("Location: ./member/01_회원가입_01_약관동의.php");
-    // include "./member/01_회원가입_01_약관동의.php";
-	exit;
-}
+// echo "111111";
+// exit;
+// if($_GET['mode']=="step_01") { 
+//     header("Location: ./member/01_회원가입_01_약관동의.php");
+//     // include "./member/01_회원가입_01_약관동의.php";
+// 	exit;
+// }
 
 // ob_start();
 

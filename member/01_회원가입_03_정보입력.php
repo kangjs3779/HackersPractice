@@ -1,11 +1,4 @@
-<?php
-include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
-echo 'session:';
-print_r($_SESSION);
-print_r($_COOKIE);
-//print_r($_SERVER);
-//include "../controllers/Step02Controller.php";
-?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
@@ -100,18 +93,19 @@ print_r($_COOKIE);
 							<tr>
 								<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 								<td>
-									<input type="text" class="input-text" id="phone1" value="<?php echo isset($_SESSION['veriCode']) ? $_SESSION['veriCode'] : '없음'; ?>" style="width:50px"/> - 
-									<input type="text" class="input-text" id="phone2" value="<?php echo $_SESSION['veriCode']?>" style="width:50px"/> - 
-									<input type="text" class="input-text" id="phone3" style="width:50px"/>
+									<input type="text" class="input-text" id="phone1" value="<?php echo substr($_SESSION['phoneNum'], 0, 3) ?>" style="width:50px" readonly/> - 
+									<input type="text" class="input-text" id="phone2" value="<?php echo substr($_SESSION['phoneNum'], 3, 4) ?>" style="width:50px" readonly/> - 
+									<input type="text" class="input-text" id="phone3" value="<?php echo substr($_SESSION['phoneNum'], 7, 4) ?>" style="width:50px" readonly/>
+									<input type="hidden" name="phoneNumber" value="<?php echo $_SESSION['phoneNum']?>" />		
 								</td>
 							</tr>
 							<tr>
 								<th scope="col"><span class="icons"></span>일반전화 번호</th>
 								<td>
-									<input type="text" class="input-text" style="width:88px"/> - 
-									<input type="text" class="input-text" style="width:88px"/> - 
-									<input type="text" class="input-text" style="width:88px"/>
-									<input type="text" name="homeNumber" />
+									<input type="text" class="input-text homeNum" style="width:88px"/> - 
+									<input type="text" class="input-text homeNum" style="width:88px"/> - 
+									<input type="text" class="input-text homeNum" style="width:88px"/>
+									<input type="hidden" name="homeNumber" id="fullHomeNum" />
 								</td>
 							</tr>
 							<tr>
@@ -172,8 +166,8 @@ print_r($_COOKIE);
 	</div>
 </div>
 
-<script src="/js/daumPostCode.js"></script>
-<script src="/js/step03.js?t=<?=time()?>"></script>
-<script src="/ajax/step03Ajax.js?t=<?=time()?>"></script>
+<script src="/js/join/daumPostCode.js"></script>
+<script src="/js/join/step03.js?t=<?=time()?>"></script>
+<script src="/js/join/ajax/step03Ajax.js?t=<?=time()?>"></script>
 </body>
 </html>

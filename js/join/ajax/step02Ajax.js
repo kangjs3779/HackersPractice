@@ -1,6 +1,6 @@
 //인증번호 받기 버튼을 누르면 전화번호 유효성 검사를 한다
 $("#send-veri-code-btn").click(function() {
-    let reg = new  RegExp(/^010\d{3,4}\d{4}$/);
+    let reg = new  RegExp(/^010\d{4}\d{4}$/);
     let phoneNum = '';
     let inputNotNullCheck = true;
 
@@ -19,14 +19,15 @@ $("#send-veri-code-btn").click(function() {
     if(inputNotNullCheck) {
         //번호 형식인지 유효성 검사
         let check = reg.test(phoneNum)
-        console.log(phoneNum);
+        console.log("폰번호 : " + phoneNum);
+        console.log("유효성 확인 : " + check);
         if(!check) {
             //번호 형식이 아니면 알림
             alert("알맞은 전화번호 형식이 아닙니다.");
         } else {
             //번호 형식이 맞으면 session에 저장
 
-            $.ajax("/controllers/Step02Controller.php", {
+            $.ajax("/ajax/Step02PhoneNumCheck.php", {
                 method: "post",
                 dataType: 'JSON',
                 data: { phoneNum: phoneNum },
@@ -36,8 +37,12 @@ $("#send-veri-code-btn").click(function() {
                     alert("인증에 성공하였습니다. 인증번호는 " + sessionVeriCode + " 입니다.")
                     console.log(data.phoneNum);
                 },
-                error: function() {
+                error: function(data) {
                     alert("인증번호 발송을 하지 못했습니다.")
+                    console.log("에러 값 확인 : " + data.phoneNum);
+                },
+                complete: function() {
+                    console.log("ajax 실행 됨");
                 }
             })
         }

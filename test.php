@@ -1,6 +1,9 @@
 <?php
-$arr = array(1, 2, 3);
+include_once "includetest.php";
 
-$answer = in_array(1, $arr);    
+echo "test php";
+echo "</br>";
+echo "인클루드를 통해 ".$val; 
+echo "</br>";
+echo "인클루드를 통해 a의 값은 ".$a; 
 
-echo $answer;

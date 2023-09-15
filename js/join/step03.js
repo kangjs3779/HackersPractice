@@ -123,12 +123,21 @@ $(".select-address").on("change", function() {
 })
 
 
-
 //주소 검색
 $("#address-btn").click(function() {
     DaumPostcode().then(function(postcodeValue) {
         checks['postCodeCheck'] = true;
     });
+})
+
+//일반 전화
+$(".homeNum").on("keyup", function() {
+    let fullNum = '';
+    $(".homeNum").each(function() {
+        let num = $(this).val();
+        fullNum += num;
+    })
+    $("#fullHomeNum").val(fullNum);
 })
 
 //휴대폰 번호
