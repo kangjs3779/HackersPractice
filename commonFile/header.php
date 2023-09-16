@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+print_r($_SESSION);
+?>
+
 <!-- skip nav -->
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
@@ -112,13 +118,20 @@
 			<div class="inner">
 				<div class="link-box">
 					<!-- 로그인전 -->
-					<a href="#">로그인</a>
-					<a href="./member/index.php?mode=step_01">회원가입</a>
-					<a href="#">상담/고객센터</a>
-					<!-- 로그인후 -->
-					<!-- <a href="#">로그아웃</a>
-					<a href="#">내정보</a>
-					<a href="#">상담/고객센터</a> -->
+                    <?php
+                        if(isset($_SESSION['memberId'])) {
+                            $memberId = $_SESSION['memberId'];
+                            //로그인 후
+                            echo "<a href='/HackersPractice/process/logoutProcess.php'>로그아웃</a>";
+                            echo "<a href='#'>내정보</a>";
+                            echo "<a href='#'>상담/고객센터</a>";
+                        } else {
+                            //로그인 전
+                            echo "<a href='#'>로그인</a>";
+                            echo "<a href='./member/index.php?mode=step_01'>회원가입</a>";
+                            echo "<a href='#'>상담/고객센터</a>";
+                        }
+                    ?>
 				</div>
 			</div>
 		</div>

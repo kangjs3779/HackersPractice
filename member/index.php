@@ -1,7 +1,7 @@
 <?php
 // MainController 역할
 // 모든 include는 여기에 작성할 것
-include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+//include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
 include_once "../key.php";
 
 //파라미터 값 가져오기

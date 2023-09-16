@@ -8,7 +8,8 @@ $("#check-veri-code-btn").click(function() {
     let checkVeriCode = inputVeriCode == sessionVeriCode;
 
     if(checkVeriCode) {
-        window.location.href = "http://practice.hackers.com/member/index.php?mode=step_03";
+        // window.location.href = "http://practice.hackers.com/member/index.php?mode=step_03";
+        window.location.href = "http://localhost:63342/HackersPractice/member/index.php?mode=step_03";
     } else {
         alert("인증번호가 틀렸습니다.")
     }
