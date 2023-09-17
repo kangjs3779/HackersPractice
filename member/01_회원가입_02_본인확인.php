@@ -87,7 +87,7 @@
 </div>
 
 <!--	<script src="/js/join/step02.js?t=--><?php //=time()?><!--"></script>-->
-<script src="/HackersPractice/js/join/step02.js"></script>
+<script src="/HackersPractice/js/join/step02VeriCode.js"></script>
 <!--	<script src="/js/join/ajax/step02Ajax.js?t=--><?php //=time()?><!--"></script>-->
 <script src="/HackersPractice/js/join/ajax/step02Ajax.js"></script>
 </body>

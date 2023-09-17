@@ -53,10 +53,10 @@ print_r($_SESSION);
             <div class="login-input">
                 <form action="/process/loginProcess.php" method="post">
                     <div class="input-text-box">
-                        <input type="text" class="input-text mb5" placeholder="아이디"
-                               value="<?php echo $_SESSION['memberId']; ?>" style="width:190px"/>
-                        <input type="password" class="input-text" placeholder="비밀번호"
-                               value="<?php echo $_SESSION['password']; ?>" style="width:190px"/>
+                        <input type="text" name="memberId" class="input-text mb5" placeholder="아이디"
+                               value="<?php echo isset($_SESSION['memberId']) ? $_SESSION['memberId'] : ''; ?>" style="width:190px"/>
+                        <input type="password" name="password" class="input-text" placeholder="비밀번호"
+                               value="<?php echo isset($_SESSION['password']) ? $_SESSION['password'] : ''; ?>" style="width:190px"/>
                     </div>
                     <button type="submit" class="btn-login" id="id-btn">로그인</button>
                 </form>
@@ -73,8 +73,8 @@ print_r($_SESSION);
             </div>
 
             <div class="box-btn">
-                <a href="/homework/01_회원가입_01_약관동의.html" class="btn-m-gray">회원가입</a>
-                <a href="#" class="btn-m-gray">ID/PW 찾기</a>
+                <a href="/member/index.php?mode=step_01" class="btn-m-gray">회원가입</a>
+                <a href="/member/index.php?mode=find_id" class="btn-m-gray">ID/PW 찾기</a>
             </div>
         </div>
         <div class="login-guide">
@@ -116,5 +116,13 @@ print_r($_SESSION);
     <span class="login-close"><button type="button" class="icon-layer-close"><span
                     class="hidden">닫기</span></button></span>
 </div>
+
+<input type="hidden" value="<?php echo isset($_SESSION['result']) ? $_SESSION['result'] : ''?>" id="result"/>
+<script>
+    if($("#result").val() == 'fail') {
+        alert("아이디 및 비밀번호를 잘못입력하셨습니다.");
+    }
+
+</script>
 </body>
 </html>

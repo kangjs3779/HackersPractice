@@ -1,8 +1,13 @@
 <?php
 // MainController 역할
 // 모든 include는 여기에 작성할 것
-//include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+session_start();
 include_once "../key.php";
+
+print_r("member index");
+print_r("</br>");
+print_r($_SESSION);
+
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
@@ -38,4 +43,23 @@ if($mode == 'step_01') {
     $fileName = './01_회원가입_04_회원가입완료.php';
     readFileProcess($fileName);
 
+} else if($mode == '' || $mode == null) {
+
+    $fileName = '../index.php';
+    readFileProcess($fileName);
+
+} else if($mode == 'find_id') {
+
+    $fileName = './02_아이디찾기.php';
+    readFileProcess($fileName);
+
+} else if($mode == 'find_id_complete') {
+
+    $fileName = './02_아이디찾기완료.php';
+    readFileProcess($fileName);
+
+} else if($mode == 'find_pass') {
+
+    $fileName = './03_비밀번호찾기.php';
+    readFileProcess($fileName);
 }

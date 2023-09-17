@@ -1,59 +1,56 @@
 <?php
-//global $conn;
 include_once "../key.php";
 
 session_start();
 
+function verifyProcess($plainPw, $memberId, $conn) {
+    $sql = "SELECT * FROM member WHERE id = '{$memberId}'";
 
-print_r($_SESSION['memberId']);
-print_r("</br>");
-print_r("</br>");
-print_r($_SESSION['password']);
-print_r("</br>");
-print_r("</br>");
-print_r($conn);
-print_r("</br>");
-print_r("</br>");
+    //DB에 sql문으로 정보를 조회하기
+    $result = mysqli_query($conn, $sql);
 
-$plainPw = $_SESSION['password'];
-$id = $_SESSION['memberId'];
+    $row = mysqli_fetch_array($result);
 
-$sql = "SELECT * FROM member WHERE id = '{$id}'";
+    //DB에서 찾은 암호화된 비번 찾기
+    $hashPw = $row['password'];
 
-//DB에 sql문으로 정보를 조회하기
-$result = mysqli_query($conn, $sql);
-//$row = mysql_result($result);
-$row = mysqli_fetch_array($result);
+    //세션에 저장된 비빌번호와 암호화된 비밀번호를 비교
+    if(password_verify($plainPw, $hashPw)) {
+        //로그인 성공 시
 
-$hashPw = $row['password'];
+        $_SESSION['result'] = 'success';
 
-print_r("sql : ".$sql);
-print_r("</br>");
-print_r("</br>");
-print_r($hashPw);
-print_r("</br>");
-print_r("</br>");
+        $_SESSION['memberId'] = $memberId;
+        $_SESSION['password'] = $plainPw;
 
-//if(password_verify($plainPw, $hashPw) {
-//    print_r("로그인 성공");
-//} else {
-//    print_r("로그인 실패");
-//}
+        header('Location: http://localhost:63342/HackersPractice/index.php');
 
-if(password_verify($plainPw, $hashPw)) {
-    print_r("로그인 성공");
-    print_r("</br>");
-    print_r("</br>");
-    header('Location: /index.php');
-} else {
-    print_r("로그인 실패");
-    print_r("</br>");
-    print_r("</br>");
-    header('Location: /member/login.php');
+    } else {
+        //로그인 실패 시
+        $_SESSION['result'] = 'fail';
+
+        header('Location: http://localhost:63342/HackersPractice/member/login.php');
+    }
 }
 
-print_r($_SERVER['HTTP_REFERER']);
+if(isset($_SESSION['memberId']) && isset($_SESSION['password'])) {
+    //회원가입 후 로그인을 진행할 때
+
+    //세션에 저장된 비밀번호와 아이디를 가져옴
+    $plainPw = $_SESSION['password'];
+    $memberId = $_SESSION['memberId'];
+
+    verifyProcess($plainPw, $memberId, $conn);
+
+} else {
+    //메인페이지에서 바로 로그인 진행 시
+
+    $memberId = $_POST['memberId'];
+    $plainPw = $_POST['password'];
+
+    verifyProcess($plainPw, $memberId, $conn);
+
+}
 
 
 
-//password_verify('rasmuslerdorf', $hash

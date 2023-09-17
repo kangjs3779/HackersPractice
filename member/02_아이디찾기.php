@@ -29,7 +29,9 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
-<!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>
 
@@ -53,23 +55,23 @@
 				<h3 class="tit-h4">아이디 찾기 방법 선택</h3>
 			</div>
 
-			<dl class="find-box">
-				<dt>휴대폰 인증</dt>
-				<dd>
-					고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.
-					<label class="input-sp big">
-						<input type="radio" name="radio" checked="checked"/>
-						<span class="input-txt"></span>
-					</label>
-				</dd>
-			</dl>
+<!--			<dl class="find-box">-->
+<!--				<dt>휴대폰 인증</dt>-->
+<!--				<dd>-->
+<!--					고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.-->
+<!--					<label class="input-sp big">-->
+<!--						<input type="radio" name="radio" checked="checked"/>-->
+<!--						<span class="input-txt"></span>-->
+<!--					</label>-->
+<!--				</dd>-->
+<!--			</dl>-->
 
 			<dl class="find-box">
 				<dt>이메일 인증</dt>
 				<dd>
 					고객님이 회원 가입 시 등록한 이메일 주소와 입력하신 이메일 주소가 동일해야 합니다.
 					<label class="input-sp big">
-						<input type="radio" name="radio"/>
+						<input type="radio" name="radio" checked="checked"/>
 						<span class="input-txt"></span>
 					</label>
 				</dd>
@@ -86,55 +88,61 @@
 					<tbody>
 						<tr>
 							<th scope="col">성명</th>
-							<td><input type="text" class="input-text" style="width:302px" /></td>
+							<td><input type="text" class="input-text" style="width:302px" id="name-input" /></td>
 						</tr>
 						<tr>
 							<th scope="col">생년월일</th>
 							<td>
-								<select class="input-sel" style="width:148px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-								</select>
+                                <input class="input-sel" style="width:148px" type="number" min="1900" max="2099" step="1" value="2023"/>
+<!--								<select class="input-sel" style="width:148px">-->
+<!--									<option value="">선택</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--								</select>-->
 								년
-								<select class="input-sel" style="width:147px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-								</select>
+                                <input class="input-sel" style="width:148px" type="number" min="01" max="12" step="1" value="01"/>
+<!--								<select class="input-sel" style="width:147px">-->
+<!--									<option value="">선택</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--								</select>-->
 								월
-								<select class="input-sel" style="width:147px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-								</select>
+                                <input class="input-sel" style="width:148px" type="number" min="01" max="31" step="1" value="01"/>
+<!--								<select class="input-sel" style="width:147px">-->
+<!--									<option value="">선택</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--									<option value="">선택입력</option>-->
+<!--								</select>-->
 								일
 							</td>
 						</tr>
 						<tr>
 							<th scope="col">이메일주소</th>
 							<td>
-								<input type="text" class="input-text" style="width:138px"/> @ <input type="text" class="input-text" style="width:138px"/>
-								<select class="input-sel" style="width:160px">
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+								<input type="text" class="input-text" style="width:138px" id="email-input"/> @ <input type="text" id="email-address-input" class="input-text" style="width:138px" readonly/>
+								<select class="input-sel select-address" style="width:160px">
+                                    <option value="">선택하기</option>
+									<option value="naver.com">naver.com</option>
+									<option value="gmail.com">gmail.com</option>
+									<option value="kakao.com">kakao.com</option>
 								</select>
-								<a href="#" class="btn-s-tin ml10">인증번호 받기</a>
+                                <input type="hidden" id="fullEmail"/>
+                                <button class="btn-s-tin ml10" id="send-vericode-btn">인증번호 받기</button>
 							</td>
 						</tr>
 						<tr>
 							<th scope="col">인증번호</th>
-							<td><input type="text" class="input-text" style="width:478px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
-						</tr>
+							<td>
+                                <input type="text" class="input-text" style="width:478px" id="vericode-input"/><button class="btn-s-tin ml10" id="check-vericode-btn">인증번호 확인</button>
+                                <input type="text" id="session-vericode" value="<?php echo isset($_SESSION['veriCode']) ? $_SESSION['veriCode'] : '' ?>" />
+                            </td>
+                        </tr>
 					</tbody>
 				</table>
 
@@ -143,5 +151,7 @@
 	</div>
 </div>
 
+<script src="/HackersPractice/js/find/findIdVeridateForm.js"></script>
+<script src="/HackersPractice/js/find/ajax/findIdVeriCodeAjax.js"></script>
 </body>
 </html>

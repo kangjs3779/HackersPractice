@@ -1,56 +1,73 @@
 <?php
-include_once "includetest.php";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // POST 요청을 처리하는 PHP 코드
+    $to = "kangjs3779@naver.com";
+    $subject = "verify code";
 
-echo "test php";
-echo "</br>";
-echo "인클루드를 통해 ".$val; 
-echo "</br>";
-echo "인클루드를 통해 a의 값은 ".$a; 
-echo "</br>";
+    $message = "<h1>해커스에 방문해주셔서 감사합니다.</h1>";
+    $message .= "<p>인증번호는 '12345'입니다.</p>";
 
-include_once "key.php";
+    $header = "From: sharemate0203@gmail.com \r\n";
+    //$header .= "MIME-Version: 1.0\r\n";
+    $header .= "Content-type: text/html;charset=UTF-8\r\n";
 
-echo "db 비번 : ".$DB_PASSWORD;
-echo "</br>";
-echo "db 호스트 : ".$DB_LOCALHOST;
-echo "</br>";
-echo "결과";
+    $retval = mail($to, $subject, $message, $header);
 
-$servername = "localhost"; // MySQL 서버 주소 (로컬 서버인 경우)
-$username = "사용자이름"; // MySQL 사용자 이름
-$password = "비밀번호"; // MySQL 비밀번호
-$dbname = "데이터베이스이름"; // 사용할 데이터베이스 이름
+    if ($retval == true) {
+        echo "Message sent successfully...";
+    } else {
+        echo "Message could not be sent...";
+    }
 
-// MySQL 서버에 연결
-// $conn = mysqli_connect('3.38.245.67', 'root', '9dfocjwHN4dR', 'Hackers');
-$conn = mysqli_connect($DB_LOCALHOST, $DB_USERNAME, $DB_PASSWORD, $DB_DBNAME);
-
-// 연결 확인
-if (!$conn) {
-    die("연결 실패: " . mysqli_connect_error());
-} else {
-    echo "MySQL 데이터베이스에 성공적으로 연결되었습니다.";
-    echo "</br>";
-
+    //send sms
+//    $result = sendSMS('01057543779', '01048852396', '테스트 문자발송', '에러');
+//
+//    if ($result < 0) {
+//        echo '에러';
+//    } else {
+//        echo "성공 (" . $result . "건)<br>";
+//    }
 }
+    ?>
 
-$testId = "test111";
+    <body>
+    <button type="button" id="button">보내기</button>
+    <button type="button" id="button2">sms</button>
+    </body>
 
-$sql = "SELECT * FROM member WHERE id = '{$testId}'";
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "", // 빈 문자열 또는 현재 파일 URL을 사용합니다.
+                    success: function (response) {
+                        console.log("PHP 코드 실행 결과:", response);
+                    }
+                });
+            });
+        });
 
-$result = mysqli_query($conn, $sql);
-$row = mysqli_fetch_array($result);
+        $(document).ready(function () {
+            $("#button2").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "", // 빈 문자열 또는 현재 파일 URL을 사용합니다.
+                    success: function (response) {
+                        console.log("PHP 코드 실행 결과:", response);
+                    }
+                });
+            });
+        });
+    </script>
 
-if(!$result) {
-    echo "이상";
-}
 
-echo "성공";
-echo "</br>";
-print_r($sql);
-echo "</br>";
-print_r($result);
-echo "</br>";
-print_r($row[0]);
-echo "</br>";
-print_r($row);
+
+
+
+
+
+

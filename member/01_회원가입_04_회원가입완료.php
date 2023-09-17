@@ -32,7 +32,6 @@
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>
-<?php print_r($_SESSION['memberId']);?>
 <div id="container" class="container-full">
 	<div id="content" class="content">
 		<div class="inner">

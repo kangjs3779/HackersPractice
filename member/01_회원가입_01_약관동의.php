@@ -522,7 +522,7 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 	</div>
 </div>
 
-<script src="/js/join/step01.js"></script>
+<script src="/js/join/step01Agree.js"></script>
 
 </body>
 </html>

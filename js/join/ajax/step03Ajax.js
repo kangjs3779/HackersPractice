@@ -11,11 +11,6 @@ $("#id-input").blur(function(e) {
             //유효성 검사 후 중복확인 진행
             let data = {idInput : idInput};
 
-            // for (let key in data) {
-            //     if (data.hasOwnProperty(key)) {
-            //       console.log(key + ": " + data[key]);
-            //     }
-            //   }
             $("#duplicate-btn").click(function() {
                 console.log("click");
                 $.ajax("/ajax/Step03IdCheck.php", {

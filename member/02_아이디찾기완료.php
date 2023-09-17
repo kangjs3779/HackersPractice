@@ -54,12 +54,12 @@
 			</div>
 
 			<div class="guide-box">
-				<p class="fs16 mb5">이진아 회원님의 아이디는 아래와 같습니다.</p>
-				<strong class="big-title tc-brand">rreamon7</strong>
+				<p class="fs16 mb5"><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : '없음'?> 회원님의 아이디는 아래와 같습니다.</p>
+				<strong class="big-title tc-brand"><?php echo isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '없음'?></strong>
 			</div>
 
 			<div class="box-btn mt30">
-				<a href="#" class="btn-l">로그인하러 가기</a>
+				<a href="/member/login.php" class="btn-l">로그인하러 가기</a>
 				<a href="#" class="btn-l-line ml5">비밀번호 찾기</a>
 			</div>
 

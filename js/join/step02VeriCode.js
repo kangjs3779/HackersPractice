@@ -1,7 +1,5 @@
 let sessionVeriCode = '';
 
-
-
 // session에 저장된 인증번호와 사용자가 입력한 인증번호가 같은지 확인
 $("#check-veri-code-btn").click(function() {
     let inputVeriCode = $("#veri-code-input").val();

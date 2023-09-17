@@ -11,7 +11,7 @@ let checks = {
 function enableJoin() {
     if (Object.values(checks).every(check => check)) {
         //배열이 모두 true이면 진행
-        window.location.href = "http://practice.hackers.com/member/index.php?mode=regist";
+        window.location.replace = "http://practice.hackers.com/member/index.php?mode=regist";
     } else {
         //요소 중 하나라도 false이면 진행하지 않음
         alert("필수 입력칸을 모두 채워주세요.");
@@ -105,7 +105,6 @@ $(".pw").on("keyup", function() {
 })
 
 //이메일 입력
-
 let emailInput = '';
 $("#email-input").blur(function() {
     emailInput = $("#email-input").val();

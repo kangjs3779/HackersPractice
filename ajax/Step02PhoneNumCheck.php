@@ -1,5 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+//include_once $_SERVER['DOCUMENT_ROOT']. '/commonFile/session.php';
+session_start();
 
 $phoneNum = $_POST['phoneNum'];
 

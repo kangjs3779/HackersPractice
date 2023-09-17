@@ -168,7 +168,7 @@
 </div>
 
 <script src="/js/join/daumPostCode.js"></script>
-<script src="/js/join/step03.js?t=<?=time()?>"></script>
+<script src="/js/join/step03VeridateForm.js?t=<?=time()?>"></script>
 <script src="/js/join/ajax/step03Ajax.js?t=<?=time()?>"></script>
 </body>
 </html>
