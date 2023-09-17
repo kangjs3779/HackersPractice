@@ -38,138 +38,128 @@
 </div>
 <!-- //skip nav -->
 
-<div id="wrap">
-	<div id="header" class="header">
-		
-		<div class="nav-section">
-			<div class="inner p-r">
-				<h1><a href="/"><img src="http://img.hackershrd.com/common/logo.png" alt="해커스 HRD LOGO" width="165" height="37"/></a></h1>
-				<div class="nav-box">
-					<h2 class="hidden">주메뉴 시작</h2>
-					
-					<ul class="nav-main-lst">
-						<li class="mnu">
-							<a href="#">일반직무</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">일반직무_01</a></li>
-								<li><a href="#">일반직무_02</a></li>
-								<li><a href="#">일반직무_03</a></li>
-								<li><a href="#">일반직무_04</a></li>
-								<li><a href="#">일반직무_05</a></li>
-								<li><a href="#">일반직무_06</a></li>
-								<li><a href="#">일반직무_07</a></li>
-								<li><a href="#">일반직무_08</a></li>
-								<li><a href="#">일반직무_09</a></li>
-							</ul>
-						</li>
-						<li class="mnu2">
-							<a href="#">산업직무</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">산업직무_01</a></li>
-								<li><a href="#">산업직무_02</a></li>
-								<li><a href="#">산업직무_03</a></li>
-								<li><a href="#">산업직무_04</a></li>
-								<li><a href="#">산업직무_05</a></li>
-								<li><a href="#">산업직무_06</a></li>
-								<li><a href="#">산업직무_07</a></li>
-								<li><a href="#">산업직무_08</a></li>
-								<li><a href="#">산업직무_09</a></li>
-							</ul>
-						</li>
-						<li class="mnu3">
-							<a href="#">공통역량</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">공통역량_01</a></li>
-								<li><a href="#">공통역량_02</a></li>
-								<li><a href="#">공통역량_03</a></li>
-								<li><a href="#">공통역량_04</a></li>
-								<li><a href="#">공통역량_05</a></li>
-								<li><a href="#">공통역량_06</a></li>
-								<li><a href="#">공통역량_07</a></li>
-								<li><a href="#">공통역량_08</a></li>
-								<li><a href="#">공통역량_09</a></li>
-							</ul>
-						</li>
-						<li class="mnu4">
-							<a href="#">어학 및 자격증</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">어학및자격증_01</a></li>
-								<li><a href="#">어학및자격증_02</a></li>
-								<li><a href="#">어학및자격증_03</a></li>
-								<li><a href="#">어학및자격증_04</a></li>
-								<li><a href="#">어학및자격증_05</a></li>
-								<li><a href="#">어학및자격증_06</a></li>
-								<li><a href="#">어학및자격증_07</a></li>
-								<li><a href="#">어학및자격증_08</a></li>
-								<li><a href="#">어학및자격증_09</a></li>
-							</ul>
-						</li>
-						<li class="mnu5">
-							<a href="#">직무교육 안내</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-							</ul>
-						</li>
-						<li class="mnu6">
-							<a href="#">내 강의실</a>
-							<ul class="nav-sub-lst">
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-								<li><a href="#">서브메뉴</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="nav-sub-box">
-				<div class="inner"><!-- <a href="#"><img src="/" alt="배너이미지" width="171" height="196"></a> --></div>
-			</div>
-
-		</div>
-
-		<div class="top-section">
-			<div class="inner">
-				<div class="link-box">
+<!--<div id="wrap">-->
+<!--	<div id="header" class="header">-->
+<!--		-->
+<!--		<div class="nav-section">-->
+<!--			<div class="inner p-r">-->
+<!--				<h1><a href="/"><img src="http://img.hackershrd.com/common/logo.png" alt="해커스 HRD LOGO" width="165" height="37"/></a></h1>-->
+<!--				<div class="nav-box">-->
+<!--					<h2 class="hidden">주메뉴 시작</h2>-->
+<!--					-->
+<!--					<ul class="nav-main-lst">-->
+<!--						<li class="mnu">-->
+<!--							<a href="#">일반직무</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">일반직무_01</a></li>-->
+<!--								<li><a href="#">일반직무_02</a></li>-->
+<!--								<li><a href="#">일반직무_03</a></li>-->
+<!--								<li><a href="#">일반직무_04</a></li>-->
+<!--								<li><a href="#">일반직무_05</a></li>-->
+<!--								<li><a href="#">일반직무_06</a></li>-->
+<!--								<li><a href="#">일반직무_07</a></li>-->
+<!--								<li><a href="#">일반직무_08</a></li>-->
+<!--								<li><a href="#">일반직무_09</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="mnu2">-->
+<!--							<a href="#">산업직무</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">산업직무_01</a></li>-->
+<!--								<li><a href="#">산업직무_02</a></li>-->
+<!--								<li><a href="#">산업직무_03</a></li>-->
+<!--								<li><a href="#">산업직무_04</a></li>-->
+<!--								<li><a href="#">산업직무_05</a></li>-->
+<!--								<li><a href="#">산업직무_06</a></li>-->
+<!--								<li><a href="#">산업직무_07</a></li>-->
+<!--								<li><a href="#">산업직무_08</a></li>-->
+<!--								<li><a href="#">산업직무_09</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="mnu3">-->
+<!--							<a href="#">공통역량</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">공통역량_01</a></li>-->
+<!--								<li><a href="#">공통역량_02</a></li>-->
+<!--								<li><a href="#">공통역량_03</a></li>-->
+<!--								<li><a href="#">공통역량_04</a></li>-->
+<!--								<li><a href="#">공통역량_05</a></li>-->
+<!--								<li><a href="#">공통역량_06</a></li>-->
+<!--								<li><a href="#">공통역량_07</a></li>-->
+<!--								<li><a href="#">공통역량_08</a></li>-->
+<!--								<li><a href="#">공통역량_09</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="mnu4">-->
+<!--							<a href="#">어학 및 자격증</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">어학및자격증_01</a></li>-->
+<!--								<li><a href="#">어학및자격증_02</a></li>-->
+<!--								<li><a href="#">어학및자격증_03</a></li>-->
+<!--								<li><a href="#">어학및자격증_04</a></li>-->
+<!--								<li><a href="#">어학및자격증_05</a></li>-->
+<!--								<li><a href="#">어학및자격증_06</a></li>-->
+<!--								<li><a href="#">어학및자격증_07</a></li>-->
+<!--								<li><a href="#">어학및자격증_08</a></li>-->
+<!--								<li><a href="#">어학및자격증_09</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="mnu5">-->
+<!--							<a href="#">직무교육 안내</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--						<li class="mnu6">-->
+<!--							<a href="#">내 강의실</a>-->
+<!--							<ul class="nav-sub-lst">-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--								<li><a href="#">서브메뉴</a></li>-->
+<!--							</ul>-->
+<!--						</li>-->
+<!--					</ul>-->
+<!--				</div>-->
+<!--			</div>-->
+<!---->
+<!--			<div class="nav-sub-box">-->
+<!--				<div class="inner">-->
+                    <!-- <a href="#"><img src="/" alt="배너이미지" width="171" height="196"></a> -->
+<!--                </div>-->
+<!--			</div>-->
+<!---->
+<!--		</div>-->
+<!---->
+<!--		<div class="top-section">-->
+<!--			<div class="inner">-->
+<!--				<div class="link-box">-->
 					<!-- 로그인전 -->
-					<a href="#">로그인</a>
-					<a href="#">회원가입</a>
-					<a href="#">상담/고객센터</a>
+<!--					<a href="#">로그인</a>-->
+<!--					<a href="#">회원가입</a>-->
+<!--					<a href="#">상담/고객센터</a>-->
 					<!-- 로그인후 -->
 					<!-- <a href="#">로그아웃</a>
 					<a href="#">내정보</a>
 					<a href="#">상담/고객센터</a> -->
-				</div>
-			</div>
-		</div>
-	</div>
-<div id="container" class="container">
-	<div id="nav-left" class="nav-left">
-		<div class="nav-left-tit"> 
-			<span>직무교육 안내</span>
-		</div>
-		<ul class="nav-left-lst">
-			<li><a href="#">해커스 HRD 소개</a></li>
-			<li><a href="#">사업주훈련</a></li>
-			<li><a href="#">근로자카드</a></li>
-			<li><a href="#">학습안내</a></li>
-			<li class="on"><a href="#">수강후기</a></li>
-		</ul>
-	</div>
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
 
 	<div id="content" class="content">
 		<div class="tit-box-h3">

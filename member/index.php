@@ -21,14 +21,15 @@ $modeActions = [
     'complete' => './01_회원가입_04_회원가입완료.php',
     'find_id' => './02_아이디찾기.php',
     'find_id_complete' => './02_아이디찾기완료.php',
-    'find_pass' => './03_비밀번호찾기.php'
+    'find_pass' => './03_비밀번호찾기.php',
+    'modify' => './05_내정보수정.php'
 ];
 
 //fileName변수에 mode값에 해당하는 파일이름을 넣어줌
 $fileName = $modeActions[$mode];
 
 if($mode == 'regist') {
-
+    //회원가입 프로세스
     include_once '../process/join/JoinProcess.php';
 
 } else if($fileName !== null) {
