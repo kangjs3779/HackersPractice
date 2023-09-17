@@ -140,7 +140,6 @@
 							<th scope="col">인증번호</th>
 							<td>
                                 <input type="text" class="input-text" style="width:478px" id="vericode-input"/><button class="btn-s-tin ml10" id="check-vericode-btn">인증번호 확인</button>
-                                <input type="text" id="session-vericode" value="<?php echo isset($_SESSION['veriCode']) ? $_SESSION['veriCode'] : '' ?>" />
                             </td>
                         </tr>
 					</tbody>

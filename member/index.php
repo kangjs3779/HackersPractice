@@ -1,13 +1,7 @@
 <?php
-// MainController 역할
-// 모든 include는 여기에 작성할 것
+// 모든 member include는 여기에 작성할 것
 session_start();
 include_once "../key.php";
-
-print_r("member index");
-print_r("</br>");
-print_r($_SESSION);
-
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
@@ -19,47 +13,25 @@ function readFileProcess($fileName) {
     include_once '../commonFile/footer.php';
 }
 
-if($mode == 'step_01') { 
+//모드의 값에 따라 다른 페이지 이름
+$modeActions = [
+    'step_01' => "./01_회원가입_01_약관동의.php",
+    'step_02' => './01_회원가입_02_본인확인.php',
+    'step_03' => './01_회원가입_03_정보입력.php',
+    'complete' => './01_회원가입_04_회원가입완료.php',
+    'find_id' => './02_아이디찾기.php',
+    'find_id_complete' => './02_아이디찾기완료.php',
+    'find_pass' => './03_비밀번호찾기.php'
+];
 
-    $fileName = "./01_회원가입_01_약관동의.php";
-    readFileProcess($fileName);
+//fileName변수에 mode값에 해당하는 파일이름을 넣어줌
+$fileName = $modeActions[$mode];
 
-} else if($mode == 'step_02') {
-    
-    $fileName = './01_회원가입_02_본인확인.php';
-    readFileProcess($fileName);
+if($mode == 'regist') {
 
-} else if($mode == 'step_03') {
-
-    $fileName = './01_회원가입_03_정보입력.php';
-    readFileProcess($fileName);
-
-} else if($mode == 'regist') {
-    
     include_once '../process/join/JoinProcess.php';
 
-} else if($mode == 'complete') {
+} else if($fileName !== null) {
 
-    $fileName = './01_회원가입_04_회원가입완료.php';
-    readFileProcess($fileName);
-
-} else if($mode == '' || $mode == null) {
-
-    $fileName = '../index.php';
-    readFileProcess($fileName);
-
-} else if($mode == 'find_id') {
-
-    $fileName = './02_아이디찾기.php';
-    readFileProcess($fileName);
-
-} else if($mode == 'find_id_complete') {
-
-    $fileName = './02_아이디찾기완료.php';
-    readFileProcess($fileName);
-
-} else if($mode == 'find_pass') {
-
-    $fileName = './03_비밀번호찾기.php';
     readFileProcess($fileName);
 }
