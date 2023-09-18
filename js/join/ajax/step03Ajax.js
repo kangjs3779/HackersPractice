@@ -13,12 +13,11 @@ $("#id-input").blur(function(e) {
 
             $("#duplicate-btn").click(function() {
                 console.log("click");
-                $.ajax("/ajax/Step03IdCheck.php", {
+                $.ajax("/ajax/join/Step03IdCheck.php", {
                     method: "post",
                     dataType: "json",
                     data: data,
                     success: function(data) {
-
                         if(data.check) {
                             alert("사용 가능한 아이디 입니다.")
                             checks['idCheck'] = true;

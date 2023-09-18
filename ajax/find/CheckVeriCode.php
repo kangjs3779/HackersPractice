@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 session_start();
 
 //post로 받은 값을 변수에 넣어줌

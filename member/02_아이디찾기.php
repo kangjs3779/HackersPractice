@@ -55,16 +55,16 @@
 				<h3 class="tit-h4">아이디 찾기 방법 선택</h3>
 			</div>
 
-<!--			<dl class="find-box">-->
-<!--				<dt>휴대폰 인증</dt>-->
-<!--				<dd>-->
-<!--					고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.-->
-<!--					<label class="input-sp big">-->
-<!--						<input type="radio" name="radio" checked="checked"/>-->
-<!--						<span class="input-txt"></span>-->
-<!--					</label>-->
-<!--				</dd>-->
-<!--			</dl>-->
+			<dl class="find-box">
+				<dt>휴대폰 인증</dt>
+				<dd>
+					고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.
+					<label class="input-sp big">
+						<input type="radio" name="radio" checked="checked"/>
+						<span class="input-txt"></span>
+					</label>
+				</dd>
+			</dl>
 
 			<dl class="find-box">
 				<dt>이메일 인증</dt>
@@ -93,32 +93,26 @@
 						<tr>
 							<th scope="col">생년월일</th>
 							<td>
-                                <input class="input-sel" style="width:148px" type="number" min="1900" max="2099" step="1" value="2023"/>
-<!--								<select class="input-sel" style="width:148px">-->
-<!--									<option value="">선택</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--								</select>-->
+                                <select class="input-sel" style="width:148px">
+                                    <?php
+                                    for($i = 2023; $i > 1900; $i--) {
+                                        echo "<option value='$i'>$i</option>";
+                                        $moth = $i;
+                                    }
+                                    ?>
+								</select>
 								년
-                                <input class="input-sel" style="width:148px" type="number" min="01" max="12" step="1" value="01"/>
-<!--								<select class="input-sel" style="width:147px">-->
-<!--									<option value="">선택</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--								</select>-->
+								<select class="input-sel" style="width:147px" id="month-input">
+                                    <?php
+                                    for($i = 1; $i < 13; $i++) {
+                                        echo "<option value='$i'>$i</option>";
+                                    }
+                                    ?>
+								</select>
 								월
-                                <input class="input-sel" style="width:148px" type="number" min="01" max="31" step="1" value="01"/>
-<!--								<select class="input-sel" style="width:147px">-->
-<!--									<option value="">선택</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--									<option value="">선택입력</option>-->
-<!--								</select>-->
+								<select class="input-sel" style="width:147px" id="date-input">
+
+								</select>
 								일
 							</td>
 						</tr>
@@ -132,7 +126,6 @@
 									<option value="gmail.com">gmail.com</option>
 									<option value="kakao.com">kakao.com</option>
 								</select>
-                                <input type="hidden" id="fullEmail"/>
                                 <button class="btn-s-tin ml10" id="send-vericode-btn">인증번호 받기</button>
 							</td>
 						</tr>
@@ -150,7 +143,7 @@
 	</div>
 </div>
 
-<script src="/HackersPractice/js/find/findIdVeridateForm.js"></script>
-<script src="/HackersPractice/js/find/ajax/findIdVeriCodeAjax.js"></script>
+<script src="/js/find/findIdVeridateForm.js"></script>
+<script src="/js/find/ajax/findIdVeriCodeAjax.js"></script>
 </body>
 </html>

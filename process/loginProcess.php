@@ -23,13 +23,15 @@ function verifyProcess($plainPw, $memberId, $conn) {
         $_SESSION['memberId'] = $memberId;
         $_SESSION['password'] = $plainPw;
 
-        header('Location: http://localhost:63342/HackersPractice/index.php');
+//        header('Location: http://localhost:63342/HackersPractice/index.php');
+        header('Location: http://practice.hackers.com/');
 
     } else {
         //로그인 실패 시
         $_SESSION['result'] = 'fail';
 
-        header('Location: http://localhost:63342/HackersPractice/member/login.php');
+//        header('Location: http://localhost:63342/HackersPractice/member/login.php');
+        header('Location: http://practice.hackers.com/member/login.php');
     }
 }
 

@@ -26,16 +26,35 @@ $("#name-input").blur(function(e) {
     }
 })
 
+//생년월일 : 월별 일수가 다른게 표시
+let monthDate = {
+    1: 31,
+    2: 29,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31,
+};
+
+$("#month-input").on("change", function () {
+    let date = monthDate[$("#month-input").val()];
+
+    for(let i = 1; i <= date; i++) {
+        $("#date-input").append("<option value='" + i + "'>" + i + "</option>")
+    }
+})
+
 //이메일 입력칸 확인
-let fullEmail = '';
 $(".select-address").on("change", function() {
     let emailInput = $("#email-input").val();
     let address = $(this).val();
     $("#email-address-input").val(address);
-
-    //이메일 합치기
-    $("#fullEmail").val(emailInput + "@" + address);
-    fullEmail = $("#fullEmail").val();
 })
 
 

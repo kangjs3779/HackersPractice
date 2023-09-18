@@ -26,8 +26,8 @@ $("#send-veri-code-btn").click(function() {
         } else {
             //번호 형식이 맞으면 session에 저장
 
-            // $.ajax("/ajax/Step02PhoneNumCheck.php", {
-            $.ajax("/HackersPractice/ajax/Step02PhoneNumCheck.php", {
+            $.ajax("/ajax/join/Step02PhoneNumCheck.php", {
+            // $.ajax("/HackersPractice/ajax/Step02PhoneNumCheck.php", {
                 method: "post",
                 dataType: 'JSON',
                 data: { phoneNum: phoneNum },

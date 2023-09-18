@@ -89,7 +89,7 @@
 							<td><input type="text" class="input-text" style="width:302px" /></td>
 						</tr>
 						<tr>
-							<th scope="col">아이디</th>
+							<th scope="col">생년월일</th>
 							<td>
 								<select class="input-sel" style="width:148px">
 									<option value="">선택</option>

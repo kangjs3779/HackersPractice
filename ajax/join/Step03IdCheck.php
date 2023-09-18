@@ -1,6 +1,6 @@
 <?php
 //DB연결하는 파일
-include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 
 //중복확인 세션 변수
 $_SESSION['check'] = false;
