@@ -30,6 +30,7 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head><body>
 
@@ -131,6 +132,7 @@
 
 		<div class="editor-wrap">
 			에디터영역
+            <textarea class="form-control" name="contents" id="contents" style="width: 100%; height:500px;"></textarea>
 		</div>
 	
 		<div class="box-btn t-r">
@@ -142,6 +144,15 @@
 		
 	</div>
 </div>
-
+<script src="/smartEditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var oEditors = [];
+        nhn.husky.EZCreator.createInIFrame({
+            oAppRef: oEditors,
+            elPlaceHolder: "ir1",
+            sSkinURI: "../se2/SmartEditor2Skin.html",
+            fCreator: "createSEditor2"
+        });
+    </script>
 </body>
 </html>

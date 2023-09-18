@@ -26,7 +26,7 @@ if($fileName == 'view') {
     include_once $fileName;
     include_once '../commonFile/footer.php';
 
-} else if($fileName != null) {
-
-    readFileProcess($fileName);
+}else if($fileName != null) {
+    include_once '../commonFile/leftnavbar.php';
+    include_once $fileName;
 }

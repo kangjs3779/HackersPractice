@@ -9,7 +9,7 @@ $_SESSION['check'] = false;
 $idInput = $_POST['idInput'];
 
 //아이디 중복 체크
-$sql = "SELECT * FROM member WHERE id = '{$idInput}'";
+$sql = "SELECT * FROM member WHERE username = '{$idInput}'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 

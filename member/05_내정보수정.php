@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
@@ -29,15 +28,14 @@
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/jquery.bxslider.min.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>
-<!-- skip nav -->
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
 </div>
-<!-- //skip nav -->
-
 <div id="container" class="container-full">
 	<div id="content" class="content">
 		<div class="inner">
@@ -56,56 +54,65 @@
 						<col style="width:15%"/>
 						<col style="*"/>
 					</colgroup>
-
 					<tbody>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이름</th>
-							<td>해커스</td>
+							<td><span id="name-text"><?= $row['name'] ?></span></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>아이디</th>
-							<td><input type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><a href="#" class="btn-s-tin ml10">중복확인</a></td>
+							<td><input id="id-input" value="<?=$row['username'] ?>" type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자"/><a id="duplicate-btn" class="btn-s-tin ml10">중복확인</a></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호</th>
-							<td><input type="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
+							<td><input id="pw-input" value="<?= $_SESSION['password']?>" type="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-							<td><input type="password" class="input-text" style="width:302px"/></td>
+							<td><input id="pw-check-input" type="password" class="input-text" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이메일주소</th>
 							<td>
-								<input type="text" class="input-text" style="width:138px"/> @ <input type="text" class="input-text" style="width:138px"/>
-								<select class="input-sel" style="width:160px">
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+								<input id="email-input" value="<?= explode('@',$row['email'])[0] ?>" type="text" class="input-text" style="width:138px"/> @ <input type="text" value="<?= explode('@',$row['email'])[1] ?>" id="email-address-input" class="input-text" style="width:138px"/>
+								<select class="input-sel select-address" style="width:160px">
+									<option value="">선택</option>
+                                    <option value="naver.com" <?= explode('@',$row['email'])[1] == 'naver.com' ? 'selected' : '' ?>>naver.com</option>
+                                    <option value="gmail.com" <?= explode('@',$row['email'])[1] == 'gmail.com' ? 'selected' : '' ?>>gmail.com</option>
+                                    <option value="kakao.com" <?= explode('@',$row['email'])[1] == 'kakao.com' ? 'selected' : '' ?>>kakao.com</option>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
-							<td>010-9999-9999</td>
+							<td>
+                                <?= substr($row['phoneNumber'], 0, 3) ?>
+                                -
+                                <?= substr($row['phoneNumber'], 3, 4) ?>
+                                -
+                                <?= substr($row['phoneNumber'], 7, 4) ?>
+                                <input value="<?= $row['phoneNumber'] ?>" id="phone-num" type="hidden"/>
+                            </td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons"></span>일반전화 번호</th>
-							<td><input type="text" class="input-text" style="width:88px"/> - <input type="text" class="input-text" style="width:88px"/> - <input type="text" class="input-text" style="width:88px"/></td>
+							<td>
+                                <input value="<?= substr($row['homeNumber'], 0, 3) ?>" type="text" class="input-text homeNum" style="width:88px"/> -
+                                <input value="<?= substr($row['homeNumber'], 3, 4) ?>" type="text" class="input-text homeNum" style="width:88px"/> -
+                                <input value="<?= substr($row['homeNumber'], 7, 4) ?>" type="text" class="input-text homeNum" style="width:88px"/>
+                            </td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>주소</th>
 							<td>
 								<p >
-									<label>우편번호 <input type="text" class="input-text ml5" style="width:242px" disabled /></label><a href="#" class="btn-s-tin ml10">주소찾기</a>
+									<label>우편번호 <input id="postcodeInput" value="<?= $row['postcode'] ?>" type="text" class="input-text ml5 address" style="width:242px" disabled /></label><button type="button" class="btn-s-tin ml10" id="address-btn">주소찾기</button>
 								</p>
 								<p class="mt10">
-									<label>기본주소 <input type="text" class="input-text ml5" style="width:719px"/></label>
+									<label>기본주소 <input id="roadAddressInput" value="<?= $row['address'] ?>" type="text" class="input-text ml5 address" style="width:719px"/></label>
 								</p>
 								<p class="mt10">
-									<label>상세주소 <input type="text" class="input-text ml5" style="width:719px"/></label>
+									<label>상세주소 <input id="extraAddressInput" value="<?= $row['detailAddress'] ?>" type="text" class="input-text ml5 address" style="width:719px"/></label>
 								</p>
 							</td>
 						</tr>
@@ -114,11 +121,11 @@
 							<td>
 								<div class="box-input">
 									<label class="input-sp">
-										<input type="radio" name="radio" id="" checked="checked"/>
+										<input type="radio" value="yes" name="radio" class="send-sms" checked="<?= $row['sendSMS'] == 'yes' ? 'checked' : ''?>"/>
 										<span class="input-txt">수신함</span>
 									</label>
 									<label class="input-sp">
-										<input type="radio" name="radio" id="" />
+										<input type="radio" value="no" name="radio" class="send-sms" checked="<?= $row['sendSMS'] == 'no' ? 'checked' : ''?>" />
 										<span class="input-txt">미수신</span>
 									</label>
 								</div>
@@ -130,11 +137,11 @@
 							<td>
 								<div class="box-input">
 									<label class="input-sp">
-										<input type="radio" name="radio2" id="" checked="checked"/>
+										<input type="radio" value="yes" class="send-email" name="radio2" id="" checked="<?= $row['sendEmail'] == 'yes' ? 'checked' : ''?>"/>
 										<span class="input-txt">수신함</span>
 									</label>
 									<label class="input-sp">
-										<input type="radio" name="radio2" id="" />
+										<input type="radio" value="no" class="send-email" name="radio2" id="" checked="<?= $row['sendEmail'] == 'no' ? 'checked' : ''?>" />
 										<span class="input-txt">미수신</span>
 									</label>
 								</div>
@@ -143,14 +150,17 @@
 						</tr>
 					</tbody>
 				</table>
-
 				<div class="box-btn">
-					<a href="#" class="btn-l">정보수정</a>
+					<a class="btn-l" id="modify-btn">정보수정</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script src="/js/join/daumPostCode.js"></script>
+<script src="/js/modifyMyInfo/modifyForm.js"></script>
+<script src="/js/modifyMyInfo/ajax/modifyAjax.js"></script>
 
 </body>
 </html>

@@ -7,7 +7,7 @@ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 $sql = "INSERT INTO member
             (
-                id,
+                username,
                 name,
                 password,
                 email,

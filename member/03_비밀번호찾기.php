@@ -45,7 +45,7 @@
 			</div>
 
 			<ul class="tab-list">
-				<li><a href="#">아이디 찾기</a></li>
+				<li><a href="/member/index.php?mode=find_id">아이디 찾기</a></li>
 				<li class="on"><a href="#">비밀번호 찾기</a></li>
 			</ul>
 

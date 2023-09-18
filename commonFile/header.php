@@ -71,7 +71,7 @@
 							</ul>
 						</li>
 						<li class="mnu5">
-							<a href="#">직무교육 안내</a>
+							<a href="/lecture_board/index.php?mode=list">직무교육 안내</a>
 							<ul class="nav-sub-lst">
 								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>
@@ -117,7 +117,7 @@
                             $memberId = $_SESSION['memberId'];
                             //로그인 후
                             echo "<a href='/process/logoutProcess.php'>로그아웃</a>";
-                            echo "<a href='/member/index.php?mode=modify'>내정보</a>";
+                            echo "<a href='/member/index.php?mode=modifyMyInfo'>내정보</a>";
                             echo "<a href='#'>상담/고객센터</a>";
                         } else {
                             //로그인 전

@@ -139,7 +139,7 @@
 		</div>
 
 		<div class="box-btn t-r">
-			<a href="#" class="btn-m">후기 작성</a>
+			<a href="/lecture_board/index.php?mode=write" class="btn-m">후기 작성</a>
 		</div>
 	</div>
 </div>
