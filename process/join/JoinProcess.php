@@ -1,5 +1,5 @@
 <?php
-include_once "member/index.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 
 //비밀번호 암호화
 $password = $_POST['password'];

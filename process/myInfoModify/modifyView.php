@@ -1,6 +1,5 @@
 <?php
 include_once "../key.php";
-$name = '강지수';
 
 //해당 정보 조회
 if($_SESSION['result'] == 'success') {

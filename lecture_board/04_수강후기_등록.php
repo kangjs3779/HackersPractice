@@ -131,28 +131,19 @@
 		</table>
 
 		<div class="editor-wrap">
-			에디터영역
-            <textarea class="form-control" name="contents" id="contents" style="width: 100%; height:500px;"></textarea>
+            <?php
+            include_once ($_SERVER['DOCUMENT_ROOT']."/daumEditor/editor.html");
+            ?>
 		</div>
 	
 		<div class="box-btn t-r">
 			<a href="#" class="btn-m-gray">목록</a>
-			<a href="#" class="btn-m ml5">저장</a>
+			<a class="btn-m ml5" onclick='saveContent()'>저장</a>
 		</div>
 
 
 		
 	</div>
 </div>
-<script src="/smartEditor/workspace/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        var oEditors = [];
-        nhn.husky.EZCreator.createInIFrame({
-            oAppRef: oEditors,
-            elPlaceHolder: "ir1",
-            sSkinURI: "../se2/SmartEditor2Skin.html",
-            fCreator: "createSEditor2"
-        });
-    </script>
 </body>
 </html>

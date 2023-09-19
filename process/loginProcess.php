@@ -1,29 +1,30 @@
 <?php
-include_once "../key.php";
+include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 
 session_start();
 
-function verifyProcess($plainPw, $memberId, $conn) {
+function verifyProcess($plainPw, $memberId, $conn){
+//입력된 아이디와 비밀번호로 회원의 정보를 찾고 확인하는 함수
+
     $sql = "SELECT * FROM member WHERE username = '{$memberId}'";
 
     //DB에 sql문으로 정보를 조회하기
     $result = mysqli_query($conn, $sql);
-
     $row = mysqli_fetch_array($result);
 
     //DB에서 찾은 암호화된 비번 찾기
     $hashPw = $row['password'];
 
     //세션에 저장된 비빌번호와 암호화된 비밀번호를 비교
-    if(password_verify($plainPw, $hashPw)) {
+    if (password_verify($plainPw, $hashPw)) {
         //로그인 성공 시
-
         $_SESSION['result'] = 'success';
-
         $_SESSION['memberId'] = $memberId;
         $_SESSION['password'] = $plainPw;
 
-        header('Location: http://practice.hackers.com/');
+        findAuthority($memberId, $conn);
+
+//        header('Location: http://practice.hackers.com/');
 
     } else {
         //로그인 실패 시
@@ -33,24 +34,26 @@ function verifyProcess($plainPw, $memberId, $conn) {
     }
 }
 
-if(isset($_SESSION['memberId']) && isset($_SESSION['password'])) {
-    //회원가입 후 로그인을 진행할 때
+function findAuthority($memberId, $conn) {
+//권한을 찾는 함수
+//    $sql = "SELECT * FROM authority WHERE username = '{$memberId}'";
+    $sql= "SELECT * FROM authority LEFT JOIN member on member.id = authority.memberId WHERE member.username = '{$memberId}'";
+    //DB에 sql문으로 정보를 조회하기
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
 
-    //세션에 저장된 비밀번호와 아이디를 가져옴
-    $plainPw = $_SESSION['password'];
-    $memberId = $_SESSION['memberId'];
-
-    verifyProcess($plainPw, $memberId, $conn);
-
-} else {
-    //메인페이지에서 바로 로그인 진행 시
-
-    $memberId = $_POST['memberId'];
-    $plainPw = $_POST['password'];
-
-    verifyProcess($plainPw, $memberId, $conn);
-
+    if($row['id']) {
+        $_SESSION['authorityId'] = $row['id'];
+        print_r($row);
+    }
 }
+
+
+//로그인 진행
+$memberId = $_POST['memberId'];
+$plainPw = $_POST['password'];
+
+verifyProcess($plainPw, $memberId, $conn);
 
 
 
