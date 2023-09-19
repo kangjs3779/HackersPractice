@@ -1,37 +1,27 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 //print_r($_GET);
-$categorization = 1;
+$categorization = $_GET['categorization'];
 
 $sql = "SELECT * FROM lecture WHERE categorization = {$categorization}";
 $result = mysqli_query($conn, $sql);
-//$row = mysqli_fetch_array($result);
 $num_rows = mysqli_num_rows($result);
-
-print_r($num_rows);
-print_r("</br>");
-print_r("</br>");
 
 $record = array();
 
 for($i = 0; $i < $num_rows; $i++) {
     $row = mysqli_fetch_array($result);
-    print_r($row);
-    print_r("</br>");
-    print_r("</br>");
     $record[$i] = $row;
 }
 
-print_r($record);
-print_r("</br>");
-print_r("</br>");
+//값을 JSON으로 변환함
+//$responseData = [
+//    'mode' => $_GET['categorization'],
+//];
 
-$matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
+//http header에 정보를 보내준다
+//application/json타입으로 보내준다
+header('Content-Type: application/json');
 
-print_r($matrix);
-print_r("</br>");
-print_r("</br>");
+//해당 데이터를 json으로 변환한다
+echo json_encode($record);

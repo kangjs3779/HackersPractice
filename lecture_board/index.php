@@ -15,13 +15,12 @@ $modeActions = [
 $fileName = $modeActions[$mode];
 
 if ($mode == 'view' || $mode == 'modify') {
-    include_once '../commonFile/header.php';
-    include_once '../commonFile/leftnavbar.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
     include_once $fileName;
-    include_once '../commonFile/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
 
 } else if ($mode != null) {
-    include_once '../process/review/lectureInfo.php';
-    include_once '../commonFile/leftnavbar.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
     include_once $fileName;
 }

@@ -23,13 +23,13 @@ $fileName = $modeActions[$mode];
 
 if($mode == 'regist') {
     //회원가입 프로세스
-    include_once '../process/join/JoinProcess.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/process/join/JoinProcess.php';
 
 } else if($fileName !== null) {
     if($mode == 'modifyMyInfo') {
-        include_once '../process/myInfoModify/modifyView.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/process/myInfoModify/modifyView.php';
     }
-    include_once '../commonFile/header.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
     include_once $fileName;
-    include_once '../commonFile/footer.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
 }

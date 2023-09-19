@@ -49,7 +49,7 @@ session_start();
         <div class="box-login">
 
             <div class="login-input">
-                <form action="/process/loginProcess.php" method="post">
+                <form action="/practice/process/loginProcess.php" method="post">
                     <div class="input-text-box">
                         <input type="text" name="memberId" class="input-text mb5" placeholder="아이디"
                                value="<?php echo isset($_SESSION['memberId']) ? $_SESSION['memberId'] : ''; ?>" style="width:190px"/>

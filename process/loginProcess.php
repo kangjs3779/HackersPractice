@@ -25,12 +25,13 @@ function verifyProcess($plainPw, $memberId, $conn){
         findAuthority($memberId, $conn);
 
 //        header('Location: http://practice.hackers.com/');
+        header('Location: http://localhost:63342/practice/index.php/');
 
     } else {
         //로그인 실패 시
         $_SESSION['result'] = 'fail';
 
-        header('Location: http://practice.hackers.com/member/login.php');
+//        header('Location: http://practice.hackers.com/member/login.php');
     }
 }
 
@@ -43,8 +44,7 @@ function findAuthority($memberId, $conn) {
     $row = mysqli_fetch_array($result);
 
     if($row['id']) {
-        $_SESSION['authorityId'] = $row['id'];
-        print_r($row);
+        $_SESSION['authorityId'] = $row[0];
     }
 }
 

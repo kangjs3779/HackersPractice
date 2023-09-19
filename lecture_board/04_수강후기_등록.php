@@ -63,10 +63,14 @@
 				<tr>
 					<th scope="col">강의</th>
 					<td>
-						<select class="input-sel" style="width:160px">
+						<select class="input-sel" id="categorization-sel" style="width:160px">
 							<option value="">분류</option>
+                            <option value="1">일반직무</option>
+                            <option value="2">산업직무</option>
+                            <option value="3">공통역량</option>
+                            <option value="4">어휘 및 자격증</option>
 						</select>
-						<select class="input-sel ml5" style="width:454px">
+						<select class="input-sel ml5" id="lecture-sel" style="width:454px">
 							<option value="">강의명</option>
 						</select>
 					</td>
@@ -140,10 +144,8 @@
 			<a href="#" class="btn-m-gray">목록</a>
 			<a class="btn-m ml5" onclick='saveContent()'>저장</a>
 		</div>
-
-
-		
 	</div>
 </div>
+<script type="text/javascript" src="/js/review/ajax/putReviewForm.js"></script>
 </body>
 </html>
