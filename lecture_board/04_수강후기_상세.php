@@ -36,130 +36,6 @@
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
 </div>
-<!-- //skip nav -->
-
-<!--<div id="wrap">-->
-<!--	<div id="header" class="header">-->
-<!--		-->
-<!--		<div class="nav-section">-->
-<!--			<div class="inner p-r">-->
-<!--				<h1><a href="/"><img src="http://img.hackershrd.com/common/logo.png" alt="해커스 HRD LOGO" width="165" height="37"/></a></h1>-->
-<!--				<div class="nav-box">-->
-<!--					<h2 class="hidden">주메뉴 시작</h2>-->
-<!--					-->
-<!--					<ul class="nav-main-lst">-->
-<!--						<li class="mnu">-->
-<!--							<a href="#">일반직무</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">일반직무_01</a></li>-->
-<!--								<li><a href="#">일반직무_02</a></li>-->
-<!--								<li><a href="#">일반직무_03</a></li>-->
-<!--								<li><a href="#">일반직무_04</a></li>-->
-<!--								<li><a href="#">일반직무_05</a></li>-->
-<!--								<li><a href="#">일반직무_06</a></li>-->
-<!--								<li><a href="#">일반직무_07</a></li>-->
-<!--								<li><a href="#">일반직무_08</a></li>-->
-<!--								<li><a href="#">일반직무_09</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="mnu2">-->
-<!--							<a href="#">산업직무</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">산업직무_01</a></li>-->
-<!--								<li><a href="#">산업직무_02</a></li>-->
-<!--								<li><a href="#">산업직무_03</a></li>-->
-<!--								<li><a href="#">산업직무_04</a></li>-->
-<!--								<li><a href="#">산업직무_05</a></li>-->
-<!--								<li><a href="#">산업직무_06</a></li>-->
-<!--								<li><a href="#">산업직무_07</a></li>-->
-<!--								<li><a href="#">산업직무_08</a></li>-->
-<!--								<li><a href="#">산업직무_09</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="mnu3">-->
-<!--							<a href="#">공통역량</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">공통역량_01</a></li>-->
-<!--								<li><a href="#">공통역량_02</a></li>-->
-<!--								<li><a href="#">공통역량_03</a></li>-->
-<!--								<li><a href="#">공통역량_04</a></li>-->
-<!--								<li><a href="#">공통역량_05</a></li>-->
-<!--								<li><a href="#">공통역량_06</a></li>-->
-<!--								<li><a href="#">공통역량_07</a></li>-->
-<!--								<li><a href="#">공통역량_08</a></li>-->
-<!--								<li><a href="#">공통역량_09</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="mnu4">-->
-<!--							<a href="#">어학 및 자격증</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">어학및자격증_01</a></li>-->
-<!--								<li><a href="#">어학및자격증_02</a></li>-->
-<!--								<li><a href="#">어학및자격증_03</a></li>-->
-<!--								<li><a href="#">어학및자격증_04</a></li>-->
-<!--								<li><a href="#">어학및자격증_05</a></li>-->
-<!--								<li><a href="#">어학및자격증_06</a></li>-->
-<!--								<li><a href="#">어학및자격증_07</a></li>-->
-<!--								<li><a href="#">어학및자격증_08</a></li>-->
-<!--								<li><a href="#">어학및자격증_09</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="mnu5">-->
-<!--							<a href="#">직무교육 안내</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--						<li class="mnu6">-->
-<!--							<a href="#">내 강의실</a>-->
-<!--							<ul class="nav-sub-lst">-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--								<li><a href="#">서브메뉴</a></li>-->
-<!--							</ul>-->
-<!--						</li>-->
-<!--					</ul>-->
-<!--				</div>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="nav-sub-box">-->
-<!--				<div class="inner">-->
-                    <!-- <a href="#"><img src="/" alt="배너이미지" width="171" height="196"></a> -->
-<!--                </div>-->
-<!--			</div>-->
-<!---->
-<!--		</div>-->
-<!---->
-<!--		<div class="top-section">-->
-<!--			<div class="inner">-->
-<!--				<div class="link-box">-->
-					<!-- 로그인전 -->
-<!--					<a href="#">로그인</a>-->
-<!--					<a href="#">회원가입</a>-->
-<!--					<a href="#">상담/고객센터</a>-->
-					<!-- 로그인후 -->
-					<!-- <a href="#">로그아웃</a>
-					<a href="#">내정보</a>
-					<a href="#">상담/고객센터</a> -->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-
 
 	<div id="content" class="content">
 		<div class="tit-box-h3">
@@ -179,28 +55,28 @@
 			</colgroup>
 			<tbody>
 				 <tr>
-					<th scope="col">제목</th>
-					<th scope="col" class="user-id">작성자 | idididi**</th>
+					<th scope="col"><?= $row[3] ?></th>
+					<th scope="col" class="user-id">작성자 | <?= $row['username'] ?></th>
 				 </tr>
 				<tr>
 					<td colspan="2">
 						<div class="box-rating">
 							<span class="tit_rating">강의만족도</span>
 							<span class="star-rating">
-								<span class="star-inner" style="width:80%"></span>
+								<span class="star-inner" style="width:<?=$row['satisfaction']?>%"></span>
 							</span>
 						</div>
-						
-						절대 후회 없는 강의예요!<br />
-						강의시간도 적당하고 요점만 잘 잡아서 설명해주시네요!<br />
-						조직에서 관리직을 담당하고 계신 분이라면 꼭 추천합니다. <br />
+                        <br/><br/>
+                        <pre>
+                            <?= $row['content'] ?>
+                        </pre>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 		
 		
-		<p class="mb15"><strong class="tc-brand fs16">dlwlsl**님의 수강하신 강의 정보</strong></p>
+		<p class="mb15"><strong class="tc-brand fs16"><?= $row['username'] ?>님의 수강하신 강의 정보</strong></p>
 		
 		<table border="0" cellpadding="0" cellspacing="0" class="tbl-lecture-list">
 			<caption class="hidden">강의정보</caption>
@@ -213,13 +89,13 @@
 				<tr>
 					<td>
 						<a href="#" class="sample-lecture">
-							<img src="http://via.placeholder.com/144x101" alt="" width="144" height="101" />
+							<img src="<?='/img/lectureMainPhoto/'.$row['lectureId']."/".$row['mainPhoto']?>" alt="" width="144" height="101" />
 							<span class="tc-brand">샘플강의 ▶</span>
 						</a>
 					</td>
 					<td class="lecture-txt">
-						<em class="tit mt10">Beyond Trouble, 조직을 감동시키는 관계의 기술</em>
-						<p class="tc-gray mt20">강사: 최환규 | 학습난이도 : 하 | 교육시간: 18시간 (18강)</p>
+						<em class="tit mt10"><?=$row[23]?></em>
+						<p class="tc-gray mt20">강사: <?=$row['teacher']?> | 학습난이도 : <?=$row['teacher']?> | 교육시간: 18시간 (18강)</p>
 					</td>
 					<td class="t-r"><a href="#" class="btn-square-line">강의<br />상세</a></td>
 				</tr>
@@ -227,9 +103,16 @@
 		</table>
 
 		<div class="box-btn t-r">
-			<a href="#" class="btn-m-gray">목록</a>
-			<a href="#" class="btn-m ml5">수정</a>
-			<a href="#" class="btn-m-dark">삭제</a>
+			<a href="/lecture_board/index.php?mode=list" class="btn-m-gray">목록</a>
+            <?php
+                if($_SESSION['memberId'] == $row['memberId']) {
+
+            ?>
+                    <a href="/lecture_board/index.php?mode=modify&reviewId=<?=$_GET['reviewId']?>" class="btn-m ml5">수정</a>
+                    <a href="/lecture_board/index.php?mode=delete&reviewId=<?=$_GET['reviewId']?>" id="delete-btn" class="btn-m-dark">삭제</a>
+            <?php
+                }
+            ?>
 		</div>
 
 		<div class="search-info">
@@ -304,4 +187,9 @@
 </div>
 
 </body>
+<script>
+    $("#delete-btn").click(function () {
+        alert("후기를 삭제하시겠습니까?");
+    })
+</script>
 </html>

@@ -3,6 +3,7 @@
 session_start();
 include_once "../key.php";
 
+print_r($_SESSION);
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
 

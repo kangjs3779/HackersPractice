@@ -1,37 +1,42 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
-//print_r($_GET);
-$categorization = 1;
+include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
+?>
 
-$sql = "SELECT * FROM lecture WHERE categorization = {$categorization}";
-$result = mysqli_query($conn, $sql);
-//$row = mysqli_fetch_array($result);
-$num_rows = mysqli_num_rows($result);
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+<!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
+<!--[if (IE 8)]><html class="no-js ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" id="X-UA-Compatible" content="IE=EmulateIE8" />
+    <title>해커스 HRD</title>
+    <meta name="description" content="해커스 HRD" />
+    <meta name="keywords" content="해커스, HRD" />
 
-print_r($num_rows);
-print_r("</br>");
-print_r("</br>");
+    <!-- 파비콘설정 -->
+    <link rel="shortcut icon" type="image/x-icon" href="http://img.hackershrd.com/common/favicon.ico" />
 
-$record = array();
+    <!-- xhtml property속성 벨리데이션 오류/확인필요 -->
+    <meta property="og:title" content="해커스 HRD" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.hackershrd.com/" />
+    <meta property="og:image" content="http://img.hackershrd.com/common/og_logo.png" />
 
-for($i = 0; $i < $num_rows; $i++) {
-    $row = mysqli_fetch_array($result);
-    print_r($row);
-    print_r("</br>");
-    print_r("</br>");
-    $record[$i] = $row;
-}
+    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/common.css" />
+    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/bxslider.css" />
+    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/main.css" /><!-- main페이지에만 호출 -->
+    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/sub.css" /><!-- sub페이지에만 호출 -->
+    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/login.css" /><!-- login페이지에만 호출 -->
 
-print_r($record);
-print_r("</br>");
-print_r("</br>");
-
-$matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-];
-
-print_r($matrix);
-print_r("</br>");
-print_r("</br>");
+    <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
+    <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
+    <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+</head>
+<body>
+    <?php
+    include_once $_SERVER['DOCUMENT_ROOT']."/commonFile/pagination.php";
+    ?>
+</body>
+</html>

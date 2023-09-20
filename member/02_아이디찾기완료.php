@@ -55,7 +55,7 @@
 
 			<div class="guide-box">
 				<p class="fs16 mb5"><?php echo isset($_SESSION['name']) ? $_SESSION['name'] : '없음'?> 회원님의 아이디는 아래와 같습니다.</p>
-				<strong class="big-title tc-brand"><?php echo isset($_SESSION['memberId']) ? $_SESSION['memberId'] : '없음'?></strong>
+				<strong class="big-title tc-brand"><?php echo isset($_SESSION['username']) ? $_SESSION['username'] : '없음'?></strong>
 			</div>
 
 			<div class="box-btn mt30">

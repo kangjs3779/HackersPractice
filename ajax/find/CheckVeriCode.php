@@ -12,11 +12,12 @@ $sql = "SELECT * FROM member WHERE email = '{$email}' and name = '{$name}'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 
+
 if($row) {
     //조건에 맞는 아이디가 있으면
     //session에 아이디 저장하기
+    $_SESSION['username'] = $row['username'];
     $_SESSION['memberId'] = $row['id'];
-    $_SESSION['name'] = $row['name'];
     $check = true;
 }
 

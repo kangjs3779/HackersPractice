@@ -87,60 +87,83 @@
 	 
 			<tbody>
 				<!-- set -->
-				<tr class="bbs-sbj">
-					<td><span class="txt-icon-line"><em>BEST</em></span></td>
-					<td>CS</td>
-					<td>
-						<a href="#">
-							<span class="tc-gray ellipsis_line">수강 강의명 : Beyond Trouble, 조직을 감동시키는 관계의 기술</span>
-							<strong class="ellipsis_line">절대 후회 없는 강의 예요!</strong>
-						</a>
-					</td>
-					<td>
-						<span class="star-rating">
-							<span class="star-inner" style="width:80%"></span>
-						</span>
-					</td>
-					<td class="last">이름</td>
-				</tr>
+                <?php
+                if($_GET['page'] == 1 || !isset($_GET['page'])) {
+                    for($i = 0; $i < 3; $i++) {
+                        ?>
+                        <tr class="bbs-sbj">
+                            <td><span class="txt-icon-line"><em>BEST</em></span></td>
+                            <td><?= $bestRecord[$i][22] ?></td>
+                            <td>
+                                <a href="/lecture_board/index.php?mode=view&reviewId=<?=$bestRecord[$i][0]?>">
+                                    <span class="tc-gray ellipsis_line">수강 강의명 : <?= $bestRecord[$i]['title'] ?></span>
+                                    <strong class="ellipsis_line"><?= $bestRecord[$i][3] ?></strong>
+                                </a>
+                            </td>
+                            <td>
+                            <span class="star-rating">
+                                <span class="star-inner" style="width:80%"></span>
+                            </span>
+                            </td>
+                            <td class="last"><?= $bestRecord[$i]['name'] ?></td>
+                        </tr>
+                <?php
+                    }
+                }
+                ?>
+
 				<!-- //set -->
 				<!-- set -->
-				<tr class="bbs-sbj">
-					<td>1</td>
-					<td>CS</td>
-					<td>
-						<a href="#">
-							<span class="tc-gray ellipsis_line">수강 강의명 : Beyond Trouble, 조직을 감동시키는 관계의 기술</span>
-							<strong class="ellipsis_line">절대 후회 없는 강의 예요!</strong>
-						</a>
-					</td>
-					<td>
+                <?php
+                    for($i = 0; $i < $num_rows; $i++) {
+                ?>
+                        <tr class="bbs-sbj">
+                            <td><?= $record[$i][0] ?></td>
+                            <td><?= $record[$i][22] ?></td>
+                            <td>
+                                <a href="/lecture_board/index.php?mode=view&reviewId=<?=$record[$i][0]?>">
+                                    <span class="tc-gray ellipsis_line">수강 강의명 : <?= $record[$i]['title'] ?></span>
+                                    <strong class="ellipsis_line"><?= $record[$i][3] ?></strong>
+                                </a>
+                            </td>
+                            <td>
 						<span class="star-rating">
-							<span class="star-inner" style="width:80%"></span>
+							<span class="star-inner" style="width:<?= $record[$i]['satisfaction'] ?>%"></span>
 						</span>
-					</td>
-					<td class="last">이름</td>
-				</tr>
+                            </td>
+                            <td class="last"><?= $record[$i]['name'] ?></td>
+                        </tr>
+                <?php
+                    }
+                ?>
+
 				<!-- //set -->
 			</tbody>
 		</table>
 
 		<div class="box-paging">
-			<a href="#"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>
-			<a href="#"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>
-			<a href="#" class="active">1</a>
-			<a href="#">2</a>
-			<a href="#">3</a>
-			<a href="#">4</a>
-			<a href="#">5</a>
-			<a href="#">6</a>
-			<a href="#"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>
-			<a href="#"><i class="icon-last"><span class="hidden">마지막페이지</span></i></a>
+            <?php include_once $_SERVER['DOCUMENT_ROOT']."/commonFile/pagination.php"?>
+            <?php
+                echo '<a href="/lecture_board/index.php?mode=list&page=1"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>';
+                echo '<a href="/lecture_board/index.php?mode=list&page=' . ($current_page - 1) . '"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>';
+                for ($i = 0; $i < $totalPage; $i++) {
+                    //페이지네이션 숫자
+                    echo '<a href="/lecture_board/index.php?mode=list&page=' . ($i + 1) . '" class="' . (isset($_GET['page']) && $_GET['page'] == ($i + 1) ? 'active' : '') . '">' . ($i + 1) . '</a>';
+                }
+                echo '<a href="/lecture_board/index.php?mode=list&page=' . ($current_page + 1) . '"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>';
+                echo '<a href="/lecture_board/index.php?mode=list&page=' . $totalPage . '"><i class="icon-last"><span class="hidden">마지막페이지</span></i></a>';
+            ?>
 		</div>
 
-		<div class="box-btn t-r">
-			<a href="/lecture_board/index.php?mode=write" class="btn-m">후기 작성</a>
-		</div>
+        <?php
+            if(isset($_SESSION['username'])) {
+        ?>
+            <div class="box-btn t-r">
+                <a href="/lecture_board/index.php?mode=write" class="btn-m">후기 작성</a>
+            </div>
+        <?php
+            }
+        ?>
 	</div>
 </div>
 

@@ -1,6 +1,8 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 
+print_r($_POST);
+
 // 파일타입 및 확장자 체크
 $mainPhoto = explode("/", $_FILES['mainPhoto']['type']);
 
@@ -36,7 +38,7 @@ if ($check) {
              '{$_POST['title']}',
              '{$_POST['teacher']}',
              '{$_POST['level']}',
-             '{$_POST['mainPhoto']}',
+             '{$_FILES['mainPhoto']['name']}',
              '{$_POST['authorityId']}'
         )";
 

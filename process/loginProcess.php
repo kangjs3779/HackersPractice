@@ -3,10 +3,10 @@ include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 
 session_start();
 
-function verifyProcess($plainPw, $memberId, $conn){
+function verifyProcess($plainPw, $username, $conn){
 //입력된 아이디와 비밀번호로 회원의 정보를 찾고 확인하는 함수
 
-    $sql = "SELECT * FROM member WHERE username = '{$memberId}'";
+    $sql = "SELECT * FROM member WHERE username = '{$username}'";
 
     //DB에 sql문으로 정보를 조회하기
     $result = mysqli_query($conn, $sql);
@@ -19,26 +19,27 @@ function verifyProcess($plainPw, $memberId, $conn){
     if (password_verify($plainPw, $hashPw)) {
         //로그인 성공 시
         $_SESSION['result'] = 'success';
-        $_SESSION['memberId'] = $memberId;
+        $_SESSION['memberId'] = $row['id'];
+        $_SESSION['username'] = $username;
         $_SESSION['password'] = $plainPw;
 
-        findAuthority($memberId, $conn);
+        findAuthority($row['id'], $conn);
 
-//        header('Location: http://practice.hackers.com/');
-        header('Location: http://localhost:63342/practice/index.php/');
+        header('Location: http://practice.hackers.com/');
+//        header('Location: http://localhost:63342/practice/index.php/');
 
     } else {
         //로그인 실패 시
         $_SESSION['result'] = 'fail';
 
-//        header('Location: http://practice.hackers.com/member/login.php');
+        header('Location: http://practice.hackers.com/member/login.php');
     }
 }
 
 function findAuthority($memberId, $conn) {
 //권한을 찾는 함수
 //    $sql = "SELECT * FROM authority WHERE username = '{$memberId}'";
-    $sql= "SELECT * FROM authority LEFT JOIN member on member.id = authority.memberId WHERE member.username = '{$memberId}'";
+    $sql= "SELECT * FROM authority LEFT JOIN member on member.id = authority.memberId WHERE member.id = '{$memberId}'";
     //DB에 sql문으로 정보를 조회하기
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
@@ -50,10 +51,10 @@ function findAuthority($memberId, $conn) {
 
 
 //로그인 진행
-$memberId = $_POST['memberId'];
+$username = $_POST['username'];
 $plainPw = $_POST['password'];
 
-verifyProcess($plainPw, $memberId, $conn);
+verifyProcess($plainPw, $username, $conn);
 
 
 
