@@ -1,44 +1,6 @@
 <?php
+
 //리뷰 리스트 페이지 정보 조회
-
-//페이지네이션 변수
-if(isset($_GET['page'])) {
-    $page = $_GET['page'];
-} else {
-    $page = 1;
-}
-
-$reviewCount = $page == 1 || $page == null ? 17 : 20;
-$start = ($page - 1) * 20;
-$recordSQL = "SELECT COUNT(*) record
-              FROM review
-                 JOIN member ON review.memberId = member.id
-                 JOIN lecture ON review.lectureId = lecture.id";
-
-$recordCountResult = mysqli_query($conn, $recordSQL);
-$allRecord = mysqli_fetch_array($allRecordResult);
-
-//후기 리스트
-$sql = "SELECT *
-            FROM review
-                 JOIN member ON review.memberId = member.id
-                 JOIN lecture ON review.lectureId = lecture.id
-                 LEFT JOIN (
-                    SELECT id
-                    FROM review
-                    ORDER BY view DESC
-                    LIMIT 3
-                ) AS bestReview ON review.id = bestReview.id
-        WHERE bestReview.id IS NULL
-        ORDER BY review.inserted DESC 
-        LIMIT {$start}, {$reviewCount}";
-
-
-$result = mysqli_query($conn, $sql);
-$num_rows = mysqli_num_rows($result);
-
-$record = array();
-
 $category = [
     1 => '일반',
     2 => '산업',
@@ -46,26 +8,75 @@ $category = [
     4 => '어학'
 ];
 
-for($i = 0; $i < $num_rows; $i++) {
-    $row = mysqli_fetch_array($result);
-    $record[$i] = $row;
-    $record[$i][22] = $category[$record[$i][22]];
-}
+if ($paginationArr['isBest']) {
+    //베스트를 출력한다고 하면?
 
-//베스트 뽑기
-$bestSQL = "SELECT * FROM review
-                  JOIN member ON review.memberId = member.id
-                  JOIN lecture ON review.lectureId = lecture.id
-            ORDER BY review.view DESC
-            LIMIT 3
-           ";
+    //후기 리스트 (베스트 제외하고 출력)
+    $sql = "SELECT *
+                FROM review
+                     JOIN member ON review.memberId = member.id
+                     JOIN lecture ON review.lectureId = lecture.id
+                     LEFT JOIN (
+                        SELECT id
+                        FROM review
+                        ORDER BY view DESC
+                        LIMIT 3
+                    ) AS bestReview ON review.id = bestReview.id
+            WHERE bestReview.id IS NULL
+            ORDER BY review.inserted DESC
+            LIMIT {$paginationArr['startIndex']}, {$paginationArr['listCount']}";
 
-$bestresult = mysqli_query($conn, $bestSQL);
-$bestRecord = array();
+    $result = mysqli_query($conn, $sql);
+    $record = array();
+    $resultNumRow = mysqli_num_rows($result);
 
-for($i = 0; $i < mysqli_num_rows($bestresult); $i++) {
-    $bestRow = mysqli_fetch_array($bestresult);
-    $bestRecord[$i] = $bestRow;
-    $bestRecord[$i][22] = $category[$bestRecord[$i][22]];
+    //카테고리를 한글로 바꿔줌
+    for ($i = 0; $i < $resultNumRow; $i++) {
+        $row = mysqli_fetch_array($result);
+        $record[$i] = $row;
+        $record[$i][22] = $category[$record[$i][22]];
+    }
+
+
+    //베스트 뽑기
+    $bestSQL = "SELECT * FROM review
+                      JOIN member ON review.memberId = member.id
+                      JOIN lecture ON review.lectureId = lecture.id
+                ORDER BY review.view DESC
+                LIMIT 3
+               ";
+
+    $bestresult = mysqli_query($conn, $bestSQL);
+    $bestRecord = array();
+
+    //베스트 카테고리를 한글로 바꿔줌
+    for ($i = 0; $i < mysqli_num_rows($bestresult); $i++) {
+        $bestRow = mysqli_fetch_array($bestresult);
+        $bestRecord[$i] = $bestRow;
+        $bestRecord[$i][22] = $category[$bestRecord[$i][22]];
+    }
+
+} else {
+    //후기 리스트
+    $sql = "SELECT *
+                FROM review
+                     JOIN member ON review.memberId = member.id
+                     JOIN lecture ON review.lectureId = lecture.id
+            ORDER BY review.inserted DESC
+            LIMIT {$paginationArr['startIndex']}, {$paginationArr['listCount']}";
+
+    $result = mysqli_query($conn, $sql);
+    $record = array();
+    $resultNumRow = mysqli_num_rows($result);
+
+    //카테고리를 한글로 바꿔줌
+    for ($i = 0; $i < $resultNumRow; $i++) {
+        $row = mysqli_fetch_array($result);
+        $record[$i] = $row;
+        $record[$i][22] = $category[$record[$i][22]];
+    }
+
+//    print_r($record);
+//    print_r("</br>");
 }
 

@@ -59,7 +59,7 @@ if ($check) {
             if($dircheck) {
                 $movecheck = move_uploaded_file($tmp_name, $path . '/' . $_FILES['mainPhoto']['name']);
                 if($movecheck) {
-                    header('Location: http://practice.hackers.com/');
+                    header('Location: http://practice.hackers.com/admin/index.php?mode=list');
                 }
             }
         }

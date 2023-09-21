@@ -1,12 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 session_start();
-print_r("수정");
-print_r("</br>");
-print_r($_POST);
-print_r("</br>");
-print_r("</br>");
-print_r("</br>");
 
 $reviewId = $_POST['reviewId'];
 $lectureId = $_POST['lectureId'];

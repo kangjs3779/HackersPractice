@@ -87,8 +87,8 @@
 						<li class="mnu6">
 							<a href="<?= isset($_SESSION['authorityId']) ? '/admin/index.php?mode=put ' : '#' ?>"><?= isset($_SESSION['authorityId']) ? '강의 등록' : '내 강의실' ?></a>
 							<ul class="nav-sub-lst">
+								<li><a href="<?= isset($_SESSION['authorityId']) ? '/admin/index.php?mode=list ' : '#' ?>"><?= isset($_SESSION['authorityId']) ? '강의 리스트' : '서브메뉴' ?></a></li>
 								<li><a href="<?= isset($_SESSION['authorityId']) ? '/admin/index.php?mode=modify ' : '#' ?>"><?= isset($_SESSION['authorityId']) ? '수정/삭제' : '서브메뉴' ?></a></li>
-								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>

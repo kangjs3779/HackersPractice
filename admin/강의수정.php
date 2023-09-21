@@ -49,7 +49,7 @@
     <div id="content" class="content">
         <div class="inner">
             <div class="tit-box-h3">
-                <h3 class="tit-h3">강의 수정 삭제</h3>
+                <h3 class="tit-h3">강의 수정</h3>
                 <div class="sub-depth">
                     <span><i class="icon-home"><span>홈</span></i></span>
                     <strong>강의등록</strong>
@@ -64,31 +64,37 @@
                         <col style="*"/>
                     </colgroup>
                     <tbody>
-                    <form action="/process/admin/putProcess.php" enctype="multipart/form-data" method="post" id="putLectureForm">
+                    <form action="/process/admin/modifyProcess.php" enctype="multipart/form-data" method="post" id="modifyLectureForm">
+                        <input name="id" value="<?= $row['id'] ?>" type="hidden" class="input-text" style="width:302px"/>
                         <tr>
                             <th scope="col"><span class="icons">*</span>강의 제목</th>
-                            <td><input name="title" type="text" class="input-text" style="width:302px"/></td>
+                            <td><input name="title" value="<?= $row['title'] ?>" type="text" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>강사 이름</th>
-                            <td><input name="teacher" type="text" class="input-text" style="width:302px"/></td>
+                            <td><input name="teacher" value="<?= $row['teacher'] ?>" type="text" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>학습 난이도</th>
-                            <td><input name="level" type="text" class="input-text" style="width:302px" /></td>
+                            <td><input name="level" value="<?= $row['level'] ?>" type="text" class="input-text" style="width:302px" /></td>
                         </tr>
                         <tr>
-                            <th scope="col"><span class="icons">*</span>썸네일</th>
-                            <td><input name="mainPhoto" type="file" class="input-text" style="width:302px"/></td>
+                            <th scope="col"><span class="icons">*</span>이전 썸네일</th>
+                            <input type="hidden" name="oldMainPhoto" id="oldMainPhoto" value="<?= $row['mainPhoto'] ?>">
+                            <td><img style="width: 500px;" src="<?= '/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?>"></td>
+                        </tr>
+                        <tr>
+                            <th scope="col"><span class="icons">*</span>수정할 썸네일</th>
+                            <td><input name="mainPhoto" id="newMainPhoto" type="file" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>분류</th>
                             <td>
                                 <select name="categorization" class="input-sel" style="width:160px">
-                                    <option value="1">일반직무</option>
-                                    <option value="2">산업직무</option>
-                                    <option value="3">공통역량</option>
-                                    <option value="4">어학 및 자격증</option>
+                                    <option value="1" <?= $row['categorization'] == 1 ? 'selected' : ''?>>일반직무</option>
+                                    <option value="2" <?= $row['categorization'] == 2 ? 'selected' : ''?>>산업직무</option>
+                                    <option value="3" <?= $row['categorization'] == 3 ? 'selected' : ''?>>공통역량</option>
+                                    <option value="4" <?= $row['categorization'] == 4 ? 'selected' : ''?>>어학 및 자격증</option>
                                 </select>
                             </td>
                         </tr>
@@ -100,14 +106,14 @@
                     </tbody>
                 </table>
                 <div class="box-btn">
-                    <button class="btn-l">수정</button>
-                    <button class="btn-l">삭제</button>
+                    <button class="btn-l" form="modifyLectureForm" type="submit">수정</button>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+<script type="text/javascript" src="/js/admin/modify.js"></script>
 </body>
 </html>
 
