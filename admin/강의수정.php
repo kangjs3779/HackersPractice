@@ -64,7 +64,8 @@
                         <col style="*"/>
                     </colgroup>
                     <tbody>
-                    <form action="/process/admin/modifyProcess.php" enctype="multipart/form-data" method="post" id="modifyLectureForm">
+<!--                    <form action="/process/admin/modifyProcess.php" enctype="multipart/form-data" method="post" id="modifyLectureForm">-->
+                    <form action="/practice/process/admin/modifyProcess.php" enctype="multipart/form-data" method="post" id="modifyLectureForm">
                         <input name="id" value="<?= $row['id'] ?>" type="hidden" class="input-text" style="width:302px"/>
                         <tr>
                             <th scope="col"><span class="icons">*</span>강의 제목</th>
@@ -81,7 +82,8 @@
                         <tr>
                             <th scope="col"><span class="icons">*</span>이전 썸네일</th>
                             <input type="hidden" name="oldMainPhoto" id="oldMainPhoto" value="<?= $row['mainPhoto'] ?>">
-                            <td><img style="width: 500px;" src="<?= '/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?>"></td>
+<!--                            <td><img style="width: 500px;" src="--><?php //= '/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?><!--"></td>-->
+                            <td><img style="width: 500px;" src="<?= '/practice/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?>"></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>수정할 썸네일</th>

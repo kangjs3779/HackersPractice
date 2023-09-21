@@ -63,8 +63,7 @@
         <tr>
             <td>
                 <a href="#" class="sample-lecture">
-                    <img src="<?= '/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?>" alt="" width="144"
-                         height="101"/>
+                    <img src="<?= '/img/lectureMainPhoto/' . $row['id'] . "/" . $row['mainPhoto'] ?>" alt="" width="144" height="101"/>
                     <span class="tc-brand">샘플강의 ▶</span>
                 </a>
             </td>
@@ -91,6 +90,11 @@
     </div>
 </div>
 </div>
+<script>
+    $("#delete-btn").click(function () {
+        alert("후기를 삭제하시겠습니까?");
+    })
+</script>
 
 </body>
 </html>

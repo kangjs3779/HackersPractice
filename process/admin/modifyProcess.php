@@ -1,6 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 print_r($_FILES);
+
 if ($_FILES['mainPhoto']['size'] != 0) {
     //썸네일을 변경했다면
     // 파일타입 및 확장자 체크
@@ -48,7 +49,7 @@ $sql = "
 
 $result = mysqli_query($conn, $sql);
 //$result = true;
-if ($result && $_FILES) {
+if ($result && $_FILES['mainPhoto']['size'] != 0) {
     //쿼리가 성공하고 사진을 변경했다면
 
     //등록이 되었으면 해당 폴더 안에 있는 이미지를 지우고 수정한 이미지를 넣는다
