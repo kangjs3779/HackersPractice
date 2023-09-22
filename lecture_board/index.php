@@ -42,14 +42,18 @@ switch ($mode) {
         //수강 후기 리스트 페이지
         include_once $_SERVER['DOCUMENT_ROOT']."/commonFile/pagination.php";
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/review/reviewList.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
         break;
 
     case 'write':
         //수강 후기 등록 페이지
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
         break;
 
     case 'delete':

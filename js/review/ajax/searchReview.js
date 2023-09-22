@@ -27,7 +27,7 @@ $("#search-btn").click(function () {
     $.ajax("/ajax/review/searchReview.php?category=" + category + "&type=" + type + "&search=" + search, {
         success: function (data) {
             $(".list").remove();
-            $(".box-paging").remove();
+            // $(".box-paging").remove();
 
             for(const review of data) {
                 let categoryNum = category;

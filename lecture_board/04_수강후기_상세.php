@@ -67,9 +67,9 @@
 							</span>
 						</div>
                         <br/><br/>
-                        <pre>
+                        <p>
                             <?= $row['content'] ?>
-                        </pre>
+                        </p>
 					</td>
 				</tr>
 			</tbody>
