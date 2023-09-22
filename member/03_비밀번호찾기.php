@@ -58,7 +58,7 @@
 				<dd>
 					고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.
 					<label class="input-sp big">
-						<input type="radio" name="radio" checked="checked"/>
+						<input type="radio" name="radio" />
 						<span class="input-txt"></span>
 					</label>
 				</dd>
@@ -69,7 +69,7 @@
 				<dd>
 					고객님이 회원 가입 시 등록한 이메일 주소와 입력하신 이메일 주소가 동일해야 합니다.
 					<label class="input-sp big">
-						<input type="radio" name="radio"/>
+						<input type="radio" name="radio" checked="checked"/>
 						<span class="input-txt"></span>
 					</label>
 				</dd>
@@ -86,33 +86,30 @@
 					<tbody>
 						<tr>
 							<th scope="col">성명</th>
-							<td><input type="text" class="input-text" style="width:302px" /></td>
+							<td><input type="text" name="name" class="input-text" style="width:302px" id="name-input" /></td>
 						</tr>
 						<tr>
 							<th scope="col">생년월일</th>
 							<td>
 								<select class="input-sel" style="width:148px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+                                    <?php
+                                    for($i = 2023; $i > 1900; $i--) {
+                                        echo "<option value='$i'>$i</option>";
+                                        $moth = $i;
+                                    }
+                                    ?>
 								</select>
 								년
-								<select class="input-sel" style="width:147px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+								<select class="input-sel" style="width:147px" id="month-input">
+                                    <?php
+                                    for($i = 1; $i < 13; $i++) {
+                                        echo "<option value='$i'>$i</option>";
+                                    }
+                                    ?>
 								</select>
 								월
-								<select class="input-sel" style="width:147px">
-									<option value="">선택</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
+								<select class="input-sel" style="width:147px" id="date-input">
+
 								</select>
 								일
 							</td>
@@ -120,21 +117,22 @@
 						<tr>
 							<th scope="col">이메일주소</th>
 							<td>
-								<input type="text" class="input-text" style="width:138px"/> @ <input type="text" class="input-text" style="width:138px"/>
-								<select class="input-sel" style="width:160px">
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-									<option value="">선택입력</option>
-								</select>
-								<a href="#" class="btn-s-tin ml10">인증번호 받기</a>
+                                <input type="text" class="input-text" style="width:138px" id="email-input"/> @ <input type="text" id="email-address-input" class="input-text" style="width:138px" readonly/>
+                                <select class="input-sel select-address" style="width:160px">
+                                    <option value="">선택하기</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="kakao.com">kakao.com</option>
+                                </select>
+                                <button class="btn-s-tin ml10" id="send-vericode-btn">인증번호 받기</button>
 							</td>
 						</tr>
 						<tr>
 							<th scope="col">인증번호</th>
-							<td><input type="text" class="input-text" style="width:478px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
-						</tr>
+                            <td>
+                                <input type="text" class="input-text" style="width:478px" id="vericode-input"/><button class="btn-s-tin ml10" id="check-vericode-pw-btn">인증번호 확인</button>
+                            </td>
+                        </tr>
 					</tbody>
 				</table>
 
@@ -142,6 +140,9 @@
 		</div>
 	</div>
 </div>
+
+<script src="/js/find/findVeridateForm.js"></script>
+<script src="/js/find/ajax/findPwVeriCodeAjax.js"></script>
 
 </body>
 </html>

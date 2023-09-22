@@ -49,12 +49,14 @@ if ($paginationArr['isBest']) {
     $bestresult = mysqli_query($conn, $bestSQL);
     $bestRecord = array();
 
+
     //베스트 카테고리를 한글로 바꿔줌
     for ($i = 0; $i < mysqli_num_rows($bestresult); $i++) {
         $bestRow = mysqli_fetch_array($bestresult);
         $bestRecord[$i] = $bestRow;
         $bestRecord[$i][22] = $category[$bestRecord[$i][22]];
     }
+
 
 } else {
     //후기 리스트

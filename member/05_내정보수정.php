@@ -121,11 +121,11 @@
 							<td>
 								<div class="box-input">
 									<label class="input-sp">
-										<input type="radio" value="yes" name="radio" class="send-sms" checked="<?= $row['sendSMS'] == 'yes' ? 'checked' : ''?>"/>
+										<input type="radio" value="yes" name="radio" class="send-sms" <?= $row['sendSMS'] == 'yes' ? 'checked' : ''?>/>
 										<span class="input-txt">수신함</span>
 									</label>
 									<label class="input-sp">
-										<input type="radio" value="no" name="radio" class="send-sms" checked="<?= $row['sendSMS'] == 'no' ? 'checked' : ''?>" />
+										<input type="radio" value="no" name="radio" class="send-sms" <?= $row['sendSMS'] == 'no' ? 'checked' : ''?> />
 										<span class="input-txt">미수신</span>
 									</label>
 								</div>
@@ -137,11 +137,11 @@
 							<td>
 								<div class="box-input">
 									<label class="input-sp">
-										<input type="radio" value="yes" class="send-email" name="radio2" id="" checked="<?= $row['sendEmail'] == 'yes' ? 'checked' : ''?>"/>
+										<input type="radio" value="yes" class="send-email" name="radio2" id="" <?= $row['sendEmail'] == 'yes' ? 'checked' : ''?>/>
 										<span class="input-txt">수신함</span>
 									</label>
 									<label class="input-sp">
-										<input type="radio" value="no" class="send-email" name="radio2" id="" checked="<?= $row['sendEmail'] == 'no' ? 'checked' : ''?>" />
+										<input type="radio" value="no" class="send-email" name="radio2" id="" <?= $row['sendEmail'] == 'no' ? 'checked' : ''?> />
 										<span class="input-txt">미수신</span>
 									</label>
 								</div>

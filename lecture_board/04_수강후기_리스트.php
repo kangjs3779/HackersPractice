@@ -110,6 +110,7 @@
                 <?php
                     }
                 }
+
                 ?>
 
 				<!-- //set -->
@@ -144,12 +145,12 @@
 		<div class="box-paging">
             <?php
                 echo '<a href="/lecture_board/index.php?mode=list&page=1"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>';
-                echo '<a href="/lecture_board/index.php?mode=list&page=' . ($currentPage - 1) . '"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>';
+                echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['prePage'] . '"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>';
                 for ($i = $paginationArr['startPage']; $i <= $paginationArr['endPage']; $i++) {
                     //페이지네이션 숫자
                     echo '<a href="/lecture_board/index.php?mode=list&page=' . $i . '" class="' . (isset($_GET['page']) && $_GET['page'] == $i ? 'active' : '') . '">' . $i . '</a>';
                 }
-                echo '<a href="/lecture_board/index.php?mode=list&page=' . ($currentPage + 1) . '"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>';
+                echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['nextPage'] . '"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>';
                 echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['totalPage'] . '"><i class="icon-last"><span class="hidden">마지막페이지</span></i></a>';
             ?>
 		</div>

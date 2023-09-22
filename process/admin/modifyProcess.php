@@ -67,4 +67,7 @@ if ($result && $_FILES['mainPhoto']['size'] != 0) {
 
         }
     }
+} else if($result && $_FILES['mainPhoto']['size'] == 0) {
+    //쿼리가 성공하고 사진을 변경하지 않았다면
+    header("Location: " . $_SERVER['HTTP_ORIGIN'] . "/admin/index.php?mode=view&lectureId=" . $lectureId);
 }

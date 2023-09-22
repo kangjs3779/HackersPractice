@@ -132,7 +132,7 @@
 						<tr>
 							<th scope="col">인증번호</th>
 							<td>
-                                <input type="text" class="input-text" style="width:478px" id="vericode-input"/><button class="btn-s-tin ml10" id="check-vericode-btn">인증번호 확인</button>
+                                <input type="text" class="input-text" style="width:478px" id="vericode-input"/><button class="btn-s-tin ml10" id="check-vericode-id-btn">인증번호 확인</button>
                             </td>
                         </tr>
 					</tbody>
@@ -143,7 +143,7 @@
 	</div>
 </div>
 
-<script src="/js/find/findIdVeridateForm.js"></script>
+<script src="/js/find/findVeridateForm.js"></script>
 <script src="/js/find/ajax/findIdVeriCodeAjax.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 session_start();
 include_once "../key.php";
 
-print_r($_SESSION);
+//print_r($_SESSION);
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
 
@@ -16,6 +16,7 @@ $modeActions = [
     'find_id' => './02_아이디찾기.php',
     'find_id_complete' => './02_아이디찾기완료.php',
     'find_pass' => './03_비밀번호찾기.php',
+    'find_pass_complete' => './03_비밀번호찾기_완료.php',
     'modifyMyInfo' => './05_내정보수정.php'
 ];
 

@@ -40,7 +40,7 @@ $result = mysqli_query($conn, $sql);
 
 //입력에 성공하면 param의 값을 complete로 변경
 if($result) {
-    $_SESSION['memberId'] = $_POST['id'];
+    $_SESSION['username'] = $_POST['id'];
     $_SESSION['password'] = $_POST['password'];
 
     header('Location: /member/index.php?mode=complete');

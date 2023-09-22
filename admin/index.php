@@ -2,7 +2,7 @@
 session_start();
 include_once "../key.php";
 
-print_r($_SESSION);
+//print_r($_SESSION);
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
@@ -56,6 +56,7 @@ switch ($mode) {
 
     case 'delete':
         //강의 삭제
+        include_once $_SERVER['DOCUMENT_ROOT']."/process/review/deleteProcess.php";
         include_once $fileName;
         break;
 }

@@ -32,7 +32,6 @@
 <!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head><body>
-
 <div id="container" class="container-full">
 	<div id="content" class="content">
 		<div class="inner">
@@ -45,8 +44,8 @@
 			</div>
 
 			<ul class="tab-list">
-				<li class="on"><a href="#">아이디 찾기</a></li>
-				<li><a href="#">비밀번호 찾기</a></li>
+				<li class="on"><a href="/member/index.php?mode=find_id">아이디 찾기</a></li>
+				<li><a href="/member/index.php?mode=find_pass">비밀번호 찾기</a></li>
 			</ul>
 
 			<div class="tit-box-h4">
@@ -60,7 +59,7 @@
 
 			<div class="box-btn mt30">
 				<a href="/member/login.php" class="btn-l">로그인하러 가기</a>
-				<a href="#" class="btn-l-line ml5">비밀번호 찾기</a>
+				<a href="/member/index.php?mode=find_pass" class="btn-l-line ml5">비밀번호 찾기</a>
 			</div>
 
 		</div>

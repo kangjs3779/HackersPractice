@@ -20,10 +20,13 @@ if (isset($_POST['fullEmail'])) {
     $to = $_POST['fullEmail'];
     $subject = "Verify code for ID";
 
-    $message = "<h1>해커스에 방문해주셔서 감사합니다.</h1>";
-    $message .= "<p>인증번호는 '123456'입니다.</p>";
+//    $message = "<h1>해커스에 방문해주셔서 감사합니다.</h1>";
+//    $message .= "<p>인증번호는 '123456'입니다.</p>";
 
-    $header = "From: hackers@hackers.com \r\n";
+    $message = "<h1>Hello. Hackers</h1>";
+    $message .= "<p>veriCode : 123456</p>";
+
+    $header = "From: sharmate0203@gmail.com \r\n";
     $header .= "Content-type: text/html;charset=UTF-8\r\n";
 
     //메일 발송 함수

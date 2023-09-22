@@ -23,8 +23,8 @@ $("#send-vericode-btn").click(function () {
     }
 })
 
-//인증번호 확인 버튼을 클릭하면 : 아이디 찾기에서
-$("#check-vericode-id-btn").click(function () {
+//인증번호 확인 버튼을 클릭하면 : 비번 찾기에서
+$("#check-vericode-pw-btn").click(function () {
     let vericodeInput = $("#vericode-input").val();
     // let sessionVeriCode = $("#session-vericode").val();
 
@@ -35,17 +35,17 @@ $("#check-vericode-id-btn").click(function () {
         if (regex.test(vericodeInput) && vericodeInput == sessionVeriCode) {
             // 입력된 값이 여섯 자리 숫자이고 세션에 저장된 인증번호와 일치한다면
 
-            $.ajax("/ajax/find/CheckVeriCodeForID.php", {
+            $.ajax("/ajax/find/CheckVeriCodeForPW.php", {
                 method: "POST",
                 dataType: "JSON",
                 data: {name : nameInput, email : fullEmail},
                 success: function (data) {
                     console.log("인증번호 확인 버튼 성공");
                     if(data.check) {
-                        //조회된 아이디가 있으면
-                        window.location.replace("http://practice.hackers.com/member/index.php?mode=find_id_complete");
+                        //조회된 회원정보가 있으면
+                        window.location.replace("http://practice.hackers.com/member/index.php?mode=find_pass_complete");
                     } else {
-                        //조회된 아이디가 없으면
+                        //조회된 회원정보가 없으면
                         alert("가입된 회원이 아닙니다.");
                     }
                 }
@@ -59,4 +59,3 @@ $("#check-vericode-id-btn").click(function () {
         alert("인증번호를 먼저 받아주세요.");
     }
 })
-

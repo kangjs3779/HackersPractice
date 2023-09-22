@@ -62,6 +62,9 @@ function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginat
 
     $listCount = $currentPage == 1 && $isBest ? $listCount - 3 : $listCount;
 
+    $nextPage = $totalPage > $currentPage ? $currentPage + 1 : $currentPage;
+    $prePage = $currentPage > 1 ? $currentPage - 1 : 1;
+
     //필요한 값 배열에 저장
     $paginationArr = [
         'startIndex' => $startIndex,
@@ -69,7 +72,9 @@ function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginat
         'listCount' => $listCount,
         'startPage' => $startPage,
         'endPage' =>$endPage,
-        'isBest' => $isBest
+        'isBest' => $isBest,
+        'nextPage' => $nextPage,
+        'prePage' => $prePage
         
     ];
 
