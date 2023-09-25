@@ -26,7 +26,7 @@
 						<col style="width:15%"/>
 						<col/>
 					</colgroup>
-					<form action="/member/index.php?mode=regist" id="member-info" method="post">
+					<form>
 						<tbody>
 							<tr>
 								<th scope="col"><span class="icons">*</span>이름</th>
@@ -53,16 +53,16 @@
 										<option value="gmail.com">gmail.com</option>
 										<option value="kakao.com">kakao.com</option>
 									</select>
-									<input type="hidden" name='email' id="fullEmail">
+<!--									<input type="hidden" name='email' id="fullEmail">-->
 								</td>
 							</tr>
 							<tr>
 								<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 								<td>
-									<input type="text" class="input-text" id="phone1" value="<?php echo substr($_SESSION['phoneNum'], 0, 3) ?>" style="width:50px" readonly/> - 
-									<input type="text" class="input-text" id="phone2" value="<?php echo substr($_SESSION['phoneNum'], 3, 4) ?>" style="width:50px" readonly/> - 
-									<input type="text" class="input-text" id="phone3" value="<?php echo substr($_SESSION['phoneNum'], 7, 4) ?>" style="width:50px" readonly/>
-									<input type="hidden" name="phoneNumber" value="<?php echo $_SESSION['phoneNum']?>" />		
+									<input type="text" class="input-text phone" id="phone1" value="<?php echo substr($_SESSION['phoneNum'], 0, 3) ?>" style="width:50px" readonly/> -
+									<input type="text" class="input-text phone" id="phone2" value="<?php echo substr($_SESSION['phoneNum'], 3, 4) ?>" style="width:50px" readonly/> -
+									<input type="text" class="input-text phone" id="phone3" value="<?php echo substr($_SESSION['phoneNum'], 7, 4) ?>" style="width:50px" readonly/>
+<!--									<input type="hidden" name="phoneNumber" value="--><?php //echo $_SESSION['phoneNum']?><!--" />		-->
 								</td>
 							</tr>
 							<tr>
@@ -71,7 +71,6 @@
 									<input type="text" class="input-text homeNum" style="width:88px"/> - 
 									<input type="text" class="input-text homeNum" style="width:88px"/> - 
 									<input type="text" class="input-text homeNum" style="width:88px"/>
-									<input type="hidden" name="homeNumber" id="fullHomeNum" />
 								</td>
 							</tr>
 							<tr>
@@ -125,7 +124,7 @@
 				</table>
 
 				<div class="box-btn">
-					<button type="submit" form="member-info" class="btn-l" id="join-btn">회원가입</button>
+					<button class="btn-l" id="join-btn">회원가입</button>
 				</div>
 			</div>
 		</div>

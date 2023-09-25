@@ -23,10 +23,10 @@
 
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/common.css"/>
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/bxslider.css"/>
+
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/main.css"/><!-- main페이지에만 호출 -->
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/sub.css"/><!-- sub페이지에만 호출 -->
-    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/login.css"/>
-    <!-- login페이지에만 호출 -->
+    <?= $_GET['mode'] == 'login' ? '<link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/login.css"/>' : ''?>
 
     <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript"
@@ -42,7 +42,7 @@
 </head>
 <body>
 
-<?php if ($mode != 'login') { ?>
+<?php if ($_GET['mode'] != 'login') { ?>
 <!-- skip nav -->
 <div id="skip-nav">
     <a href="#content">본문 바로가기</a>
@@ -178,4 +178,4 @@
             </div>
         </div>
     </div>
-<?php } ?>
+<?php }
