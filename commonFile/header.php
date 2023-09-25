@@ -71,7 +71,7 @@
 							</ul>
 						</li>
 						<li class="mnu5">
-							<a href="/lecture_board/index.php?mode=list">직무교육 안내</a>
+							<a href="/review/index.php?mode=list">직무교육 안내</a>
 							<ul class="nav-sub-lst">
 								<li><a href="#">서브메뉴</a></li>
 								<li><a href="#">서브메뉴</a></li>
