@@ -1,16 +1,8 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 
-print_r("연결됨");
-print_r("</br>");
-print_r($_SERVER['REQUEST_METHOD']);
 // PATCH 요청 본문에서 데이터 추출
 $data = json_decode(file_get_contents('php://input'), true);
-
-
-print_r($data);
-
-
 
 //비밀번호 암호화
 $password = $data['password'];

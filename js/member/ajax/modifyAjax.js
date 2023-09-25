@@ -28,7 +28,7 @@ $("#duplicate-btn").click(function() {
         let idInput = $("#id-input").val();
         let data = {idInput : idInput};
 
-        $.ajax("/ajax/modifyMyInfo/IdCheck.php", {
+        $.ajax("/ajax/member/IdCheck.php", {
             method: "post",
             dataType: "json",
             data: data,
@@ -89,7 +89,7 @@ $("#modify-btn").click(function () {
 
         console.log(data);
 
-        $.ajax("../process/myInfoModify/modifyProcess.php", {
+        $.ajax("/ajax/member/member.php", {
             method: "PATCH",
             contentType: "application/json",
             data: JSON.stringify(data),

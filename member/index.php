@@ -1,9 +1,8 @@
 <?php
 // 모든 member include는 여기에 작성할 것
 session_start();
-include_once "../key.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
 
-//print_r($_SESSION);
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
 
@@ -17,28 +16,38 @@ $modeActions = [
     'find_id_complete' => './02_아이디찾기완료.php',
     'find_pass' => './03_비밀번호찾기.php',
     'find_pass_complete' => './03_비밀번호찾기_완료.php',
-    'modifyMyInfo' => './05_내정보수정.php',
+    'member' => './05_내정보수정.php',
     'login' => './login.php'
 ];
 
 //fileName변수에 mode값에 해당하는 파일이름을 넣어줌
 $fileName = $modeActions[$mode];
 
-if($mode == 'regist') {
-    //회원가입 프로세스
-    include_once $_SERVER['DOCUMENT_ROOT'].'/process/join/JoinProcess.php';
+//if($mode == 'regist') {
+//    //회원가입 프로세스
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/process/join/JoinProcess.php';
+//    //ajax로 호출하기
+//
+//} else if ($mode == 'login') {
+//    //로그인 페이지
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//    include_once $fileName;
+//
+//} else if($fileName !== null) {
+//    if($mode == 'member') {
+////        include_once $_SERVER['DOCUMENT_ROOT'].'/process/myInfoModify/modifyView.php';
+//        //상단에 붙이기
+//    }
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
+//    include_once $fileName;
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
+//}
 
-} else if ($mode == 'login') {
-    //로그인 페이지
-    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
-    include_once $fileName;
 
-} else if($fileName !== null) {
-    if($mode == 'modifyMyInfo') {
-        include_once $_SERVER['DOCUMENT_ROOT'].'/process/myInfoModify/modifyView.php';
-    }
-    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
-    include_once $fileName;
-    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';
-}
+//나머지 모든 회원에 관한 페이지
+//    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/commonFile/header.php';
+include_once $fileName;
+include_once $_SERVER['DOCUMENT_ROOT'] . '/commonFile/footer.php';
+

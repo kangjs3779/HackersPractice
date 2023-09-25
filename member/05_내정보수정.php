@@ -1,4 +1,15 @@
+<?php
+include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 
+//해당 정보 조회
+if($_SESSION['result'] == 'success') {
+    //로그인에 성공한 사용자이면
+    $sql = "SELECT * FROM member WHERE id = '{$_SESSION['memberId']}'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_array($result);
+}
+
+?>
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
 </div>
@@ -125,6 +136,6 @@
 </div>
 
 <script src="/js/join/daumPostCode.js"></script>
-<script src="/js/modifyMyInfo/modifyForm.js"></script>
-<script src="/js/modifyMyInfo/ajax/modifyAjax.js"></script>
+<script src="/js/member/modifyForm.js"></script>
+<script src="/js/member/ajax/modifyAjax.js"></script>
 

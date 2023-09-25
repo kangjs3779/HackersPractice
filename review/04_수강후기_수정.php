@@ -1,4 +1,8 @@
+<?php
+//include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
 
+
+?>
     <div id="skip-nav">
         <a href="#content">본문 바로가기</a>
     </div>
