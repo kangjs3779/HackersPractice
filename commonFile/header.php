@@ -1,3 +1,5 @@
+
+
 <!-- skip nav -->
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
@@ -121,7 +123,7 @@
                             echo "<a href='#'>상담/고객센터</a>";
                         } else {
                             //로그인 전
-                            echo "<a href='/member/login.php'>로그인</a>";
+                            echo "<a href='/member/index.php?mode=login'>로그인</a>";
                             echo "<a href='/member/index.php?mode=step_01'>회원가입</a>";
                             echo "<a href='#'>상담/고객센터</a>";
                         }

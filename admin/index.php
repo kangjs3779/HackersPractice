@@ -24,6 +24,7 @@ switch ($mode) {
     case 'view':
         //강의 상세보기 페이지
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/admin/lectureInfo.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once '../commonFile/header.php';
         include_once $fileName;
         include_once '../commonFile/footer.php';
@@ -33,6 +34,7 @@ switch ($mode) {
         //강의 수정 페이지
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/admin/lectureInfo.php';
         include_once "../process/admin/modifyView.php";
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once '../commonFile/header.php';
         include_once $fileName;
         include_once '../commonFile/footer.php';
@@ -42,6 +44,7 @@ switch ($mode) {
         //강의 리스트 페이지
         include_once '../commonFile/pagination.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/admin/lectureList.php';
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once '../commonFile/header.php';
         include_once $fileName;
         include_once '../commonFile/footer.php';
@@ -49,6 +52,7 @@ switch ($mode) {
 
     case 'put':
         //강의 등록 페이지
+        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once '../commonFile/header.php';
         include_once $fileName;
         include_once '../commonFile/footer.php';

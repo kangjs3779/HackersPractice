@@ -17,7 +17,8 @@ $modeActions = [
     'find_id_complete' => './02_아이디찾기완료.php',
     'find_pass' => './03_비밀번호찾기.php',
     'find_pass_complete' => './03_비밀번호찾기_완료.php',
-    'modifyMyInfo' => './05_내정보수정.php'
+    'modifyMyInfo' => './05_내정보수정.php',
+    'login' => './login.php'
 ];
 
 //fileName변수에 mode값에 해당하는 파일이름을 넣어줌
@@ -27,10 +28,16 @@ if($mode == 'regist') {
     //회원가입 프로세스
     include_once $_SERVER['DOCUMENT_ROOT'].'/process/join/JoinProcess.php';
 
+} else if ($mode == 'login') {
+    //로그인 페이지
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+    include_once $fileName;
+
 } else if($fileName !== null) {
     if($mode == 'modifyMyInfo') {
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/myInfoModify/modifyView.php';
     }
+    include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
     include_once $fileName;
     include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/footer.php';

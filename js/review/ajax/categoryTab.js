@@ -1,30 +1,9 @@
-let category = 0;
-let type = 0;
-let search = '';
-
-let categoryName = {
-    1: '일반',
-    2: '산업',
-    3: '공통',
-    4: '어학'
-}
-
-$("#categorizarion-sel").on("change", function () {
-    category = $(this).val();
-    type = $("#type-sel").val();
-})
-
-$("#type-sel").on("change", function () {
-    type = $(this).val();
-    $("#search-input").attr("placeholder", type == 1 ? "강의명을 입력하세요." : "작성자를 입력하세요.");
-})
 
 
-$("#search-btn").click(function () {
-    //검색 버튼을 누르면
-    search = $("#search-input").val();
+$(".categoryTab").click(function () {
+    let category = $(this).attr('category');
 
-    $.ajax("/ajax/review/searchReview.php?category=" + category + "&type=" + type + "&search=" + search, {
+    $.ajax("/ajax/review/categoryTab.php?category=" + category, {
         success: function (data) {
             $(".list").remove();
             $(".box-paging").remove();

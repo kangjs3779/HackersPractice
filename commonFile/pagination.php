@@ -11,51 +11,52 @@ $totalPage = 0; //필요한 페이지네이션의 수
 
 
 //페이지네이션 로직 함수
-function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginationBlock, $isBest) {
+function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginationBlock, $isBest)
+{
 
     //DB의 시작 인덱스 구하는 식
     $startIndex = ($currentPage - 1) * $listCount;
     $totalPage = $totalRecordCount % $listCount == 0 ? $totalRecordCount / $listCount : ceil(($totalRecordCount / $listCount));
 
-    if($paginationBlock >= $totalPage) {
+    if ($paginationBlock >= $totalPage) {
         //총 필요한 페이지가 페이지네이션블럭의 수보다 작으면?
         $startPage = 1;
         $endPage = $totalPage;
 
     } else {
         //총 필요한 페이지가 페이지네이션블럭의 수보다 크면? ex) total = 50, 90
-        if($totalPage % $paginationBlock == 0) {
+        if ($totalPage % $paginationBlock == 0) {
             //총 페이지가 블럭보다 크고 나누었을 때 0이 된다면
-            if($currentPage >= 1 && $currentPage <= 10) {
+            if ($currentPage >= 1 && $currentPage <= 10) {
                 $startPage = 1;
                 $endPage = 10;
 
             } else {
                 $startPage =
                     $currentPage % $paginationBlock != 0 ?
-                    (floor($currentPage / $paginationBlock) * $paginationBlock) + 1 :
-                    ((floor($currentPage / $paginationBlock) - 1) * $paginationBlock) + 1;
+                        (floor($currentPage / $paginationBlock) * $paginationBlock) + 1 :
+                        ((floor($currentPage / $paginationBlock) - 1) * $paginationBlock) + 1;
 
                 $endPage = $startPage + 9;
             }
 
         } else {
             //총 페이지가 블럭보다 크고 나우었을 때 0이 안된다면
-            if($currentPage >= 1 && $currentPage <= 10) {
+            if ($currentPage >= 1 && $currentPage <= 10) {
                 $startPage = 1;
                 $endPage = 10;
 
             } else {
                 $startPage =
                     $currentPage % $paginationBlock != 0 ?
-                    (floor($currentPage / $paginationBlock) * $paginationBlock) + 1 :
-                    ((floor($currentPage / $paginationBlock) - 1) * $paginationBlock) + 1;
+                        (floor($currentPage / $paginationBlock) * $paginationBlock) + 1 :
+                        ((floor($currentPage / $paginationBlock) - 1) * $paginationBlock) + 1;
 
                 $endPage =
-                    floor($totalPage/$paginationBlock) == floor($currentPage / $paginationBlock)
-                    && $currentPage % $paginationBlock != 0  ?
-                    $totalPage :
-                    $startPage + 9;
+                    floor($totalPage / $paginationBlock) == floor($currentPage / $paginationBlock)
+                    && $currentPage % $paginationBlock != 0 ?
+                        $totalPage :
+                        $startPage + 9;
             }
         }
     }
@@ -71,17 +72,17 @@ function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginat
         'totalPage' => $totalPage,
         'listCount' => $listCount,
         'startPage' => $startPage,
-        'endPage' =>$endPage,
+        'endPage' => $endPage,
         'isBest' => $isBest,
         'nextPage' => $nextPage,
         'prePage' => $prePage
-        
+
     ];
 
     return $paginationArr;
 }
 
-if(strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'view') {
+if (strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'view') {
     // 수강 후기 상세 페이지라면?
 
     $totalRecordQeury = "SELECT COUNT(*)
@@ -95,20 +96,21 @@ if(strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'view') {
 
     $paginationArr = paginationProcess(5, $totalRecordCount, $currentPage, $paginationBlock, $isBest);
 
-} else if(strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'list') {
+} else if (strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'list') {
     // 수강 후기 리스트 페이지라면?
 
     $totalRecordQeury = "SELECT COUNT(*)
                          FROM review
                             JOIN member ON review.memberId = member.id
-                            JOIN lecture ON review.lectureId = lecture.id";
+                            JOIN lecture ON review.lectureId = lecture.id
+                         ";
 
     $recordCountResult = mysqli_query($conn, $totalRecordQeury);
     $totalRecordCount = mysqli_fetch_array($recordCountResult)[0];
     $isBest = true;
-
+    
     $paginationArr = paginationProcess(20, $totalRecordCount, $currentPage, $paginationBlock, $isBest);
-} else if(strpos($_SERVER['SCRIPT_FILENAME'], 'admin') && $_GET['mode'] == 'list') {
+} else if (strpos($_SERVER['SCRIPT_FILENAME'], 'admin') && $_GET['mode'] == 'list') {
     //관리자페이지 강의 리스트라면?
 
     $totalRecordQeury = "SELECT COUNT(*) 

@@ -32,7 +32,7 @@ function verifyProcess($plainPw, $username, $conn){
         //로그인 실패 시
         $_SESSION['result'] = 'fail';
 
-        header('Location: http://practice.hackers.com/member/login.php');
+        header('Location: http://practice.hackers.com/member/index.php?mode=login');
     }
 }
 

@@ -38,7 +38,6 @@
     <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 </head>
-
 <body>
 <div id="container" class="container-full">
     <div id="content" class="content">
