@@ -2,6 +2,7 @@
 <?php
 session_start();
 include_once "./commonFile/header.php";
+include_once "./commonFile/script.php";
 ?>
 <div id="container">
 	<div class="main-slider-applyclass">
@@ -373,8 +374,6 @@ $(document).ready(function(){
 	});
 });
 </script>
-
-
 </div>
 
 <?php include_once "./commonFile/footer.php";?>
