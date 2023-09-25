@@ -105,7 +105,7 @@
                     <td><span class="txt-icon-line"><em>BEST</em></span></td>
                     <td><?= $bestRecord[$i][22] ?></td>
                     <td>
-                        <a href="/lecture_board/index.php?mode=view&reviewId=<?= $bestRecord[$i][0] ?>">
+                        <a href="/review/index.php?mode=view&reviewId=<?= $bestRecord[$i][0] ?>">
                             <span class="tc-gray ellipsis_line">수강 강의명 : <?= $bestRecord[$i]['title'] ?></span>
                             <strong class="ellipsis_line"><?= $bestRecord[$i][3] ?></strong>
                         </a>
@@ -132,7 +132,7 @@
                 <td><?= $record[$i][0] ?></td>
                 <td><?= $record[$i][22] ?></td>
                 <td>
-                    <a href="/lecture_board/index.php?mode=view&reviewId=<?= $record[$i][0] ?>">
+                    <a href="/review/index.php?mode=view&reviewId=<?= $record[$i][0] ?>">
                         <span class="tc-gray ellipsis_line">수강 강의명 : <?= $record[$i]['title'] ?></span>
                         <strong class="ellipsis_line"><?= $record[$i][3] ?></strong>
                     </a>
@@ -154,14 +154,14 @@
 
     <div class="box-paging">
         <?php
-        echo '<a href="/lecture_board/index.php?mode=list&page=1"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>';
-        echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['prePage'] . '"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>';
+        echo '<a href="/review/index.php?mode=list&page=1"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>';
+        echo '<a href="/review/index.php?mode=list&page=' . $paginationArr['prePage'] . '"><i class="icon-prev"><span class="hidden">이전페이지</span></i></a>';
         for ($i = $paginationArr['startPage']; $i <= $paginationArr['endPage']; $i++) {
             //페이지네이션 숫자
-            echo '<a href="/lecture_board/index.php?mode=list&page=' . $i . '" class="' . (isset($_GET['page']) && $_GET['page'] == $i ? 'active' : '') . '">' . $i . '</a>';
+            echo '<a href="/review/index.php?mode=list&page=' . $i . '" class="' . (isset($_GET['page']) && $_GET['page'] == $i ? 'active' : '') . '">' . $i . '</a>';
         }
-        echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['nextPage'] . '"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>';
-        echo '<a href="/lecture_board/index.php?mode=list&page=' . $paginationArr['totalPage'] . '"><i class="icon-last"><span class="hidden">마지막페이지</span></i></a>';
+        echo '<a href="/review/index.php?mode=list&page=' . $paginationArr['nextPage'] . '"><i class="icon-next"><span class="hidden">다음페이지</span></i></a>';
+        echo '<a href="/review/index.php?mode=list&page=' . $paginationArr['totalPage'] . '"><i class="icon-last"><span class="hidden">마지막페이지</span></i></a>';
         ?>
     </div>
 
@@ -169,7 +169,7 @@
     if (isset($_SESSION['username'])) {
         ?>
         <div class="box-btn t-r">
-            <a href="/lecture_board/index.php?mode=write" class="btn-m">후기 작성</a>
+            <a href="/review/index.php?mode=write" class="btn-m">후기 작성</a>
         </div>
         <?php
     }

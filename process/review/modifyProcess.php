@@ -22,5 +22,5 @@ $sql = "
 $result = mysqli_query($conn, $sql);
 
 if($result) {
-    header("Location: ".$_SERVER['HTTP_ORIGIN']."/lecture_board/index.php?mode=view&reviewId=".$reviewId);
+    header("Location: ".$_SERVER['HTTP_ORIGIN']."/review/index.php?mode=view&reviewId=".$reviewId);
 }

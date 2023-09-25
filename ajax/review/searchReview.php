@@ -17,18 +17,20 @@ $sql = "SELECT * FROM review
           AND ".($type == 1 ? $lectureSQL : $writerSQL)." LIKE '%".$search."%'";
 
 $result = mysqli_query($conn, $sql);
-$num_rows = mysqli_num_rows($result);
+$totalRow = mysqli_num_rows($result);
 
 $record = array();
 
-for($i = 0; $i < $num_rows; $i++) {
+for($i = 0; $i < $totalRow; $i++) {
     $row = mysqli_fetch_array($result);
     $record[$i] = $row;
 }
 
+//print_r("이거".$paginationArr."임");
+array_push($record, $paginationArr);
+
+//print_r($_SERVER);
 //print_r($sql);
-
-
 //http header에 정보를 보내준다
 //application/json타입으로 보내준다
 header('Content-Type: application/json');

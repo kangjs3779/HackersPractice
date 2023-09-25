@@ -19,5 +19,5 @@ $result = mysqli_query($conn, $sql);
 $lastId = mysqli_insert_id($conn);
 
 if($result) {
-    header("Location: ".$_SERVER['HTTP_ORIGIN']."/lecture_board/index.php?mode=view&reviewId=".$lastId);
+    header("Location: ".$_SERVER['HTTP_ORIGIN']."/review/index.php?mode=view&reviewId=".$lastId);
 }
