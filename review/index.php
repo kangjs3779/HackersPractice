@@ -7,11 +7,11 @@ $mode = $_GET['mode'];
 
 //모드의 값에 따라 다른 페이지 이름
 $modeActions = [
-    'list' => './04_수강후기_리스트.php',
-    'write' => './04_수강후기_등록.php',
-    'view' => './04_수강후기_상세.php',
-    'modify' => './04_수강후기_수정.php',
-    'delete' => $_SERVER['DOCUMENT_ROOT'].'/process/review/deleteProcess.php'
+    'list' => '/reviewList.php',
+    'write' => '/putReview.php',
+    'view' => '/reviewDetail.php',
+    'modify' => '/modifyReview.php',
+    'delete' => '/process/review/deleteProcess.php'
 ];
 
 //fileName변수에 mode값에 해당하는 파일이름을 넣어줌
@@ -23,7 +23,7 @@ switch ($mode) {
         include_once $_SERVER['DOCUMENT_ROOT']."/commonFile/pagination.php";
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/review/reviewList.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/review/reviewInfo.php';
-        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
@@ -33,7 +33,7 @@ switch ($mode) {
     case 'modify':
         //수강 후기 수정 페이지
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/review/reviewInfo.php';
-        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
@@ -44,7 +44,7 @@ switch ($mode) {
         //수강 후기 리스트 페이지
         include_once $_SERVER['DOCUMENT_ROOT']."/commonFile/pagination.php";
         include_once $_SERVER['DOCUMENT_ROOT'].'/process/review/reviewList.php';
-        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
@@ -53,7 +53,7 @@ switch ($mode) {
 
     case 'write':
         //수강 후기 등록 페이지
-        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
+//        include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/script.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/header.php';
         include_once $_SERVER['DOCUMENT_ROOT'].'/commonFile/leftnavbar.php';
         include_once $fileName;
