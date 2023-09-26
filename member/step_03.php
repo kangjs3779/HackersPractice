@@ -131,7 +131,7 @@
 	</div>
 </div>
 
-<script src="/js/join/daumPostCode.js"></script>
-<script src="/js/join/step03VeridateForm.js?t=<?=time()?>"></script>
-<script src="/js/join/ajax/step03Ajax.js?t=<?=time()?>"></script>
+<!--<script src="/js/join/daumPostCode.js"></script>-->
+<!--<script src="/js/join/step03Form.js?t=--><?php //=time()?><!--"></script>-->
+<script src="/js/member/memberAjax.js?t=<?= time()?>"></script>
 

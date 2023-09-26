@@ -91,7 +91,7 @@ $("#join-btn").click(function () {
     // window.location.replace = "http://practice.hackers.com/member/index.php?mode=regist";
     // window.location.href = "http://localhost:63342/practice/member/index.php?mode=regist";
     // $.ajax("/ajax/join/JoinProcess", {
-    $.ajax("/ajax/join/JoinProcess.php", {
+    $.ajax("/ajax/join/JoinAjax.php", {
         method: "post",
         contentType: "application/json",
         data: JSON.stringify(data),

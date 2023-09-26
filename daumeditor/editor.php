@@ -21,9 +21,9 @@
         에디터 리소스들을 로딩하는 부분으로, 경로가 변경되면 이 부분 수정이 필요.
         주의: 서비스에 이용시 loader 에 붙은 environment=development 값을 제거해야 브라우저 캐시를 사용할 수 있습니다.
     -->
-    <link rel="stylesheet" href="/daumeditor/css/editor.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="/lib/daumeditoritor/css/editor.css" type="text/css" charset="utf-8"/>
 	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
-    <script src="/daumeditor/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
+    <script src="/lib/daumeditoritor/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>
@@ -266,9 +266,9 @@
 							</div>
 							<div class="tx-menu-footer">
 								<img class="tx-menu-confirm"
-									 src="/daumeditor/images/icon/editor/btn_confirm.gif?rv=1.0.1" alt=""/>
+                                     src="/lib/daumeditoritor/images/icon/editor/btn_confirm.gif?rv=1.0.1" alt=""/>
 								<img class="tx-menu-cancel" hspace="3"
-									 src="/daumeditor/images/icon/editor/btn_cancel.gif?rv=1.0.1" alt=""/>
+                                     src="/lib/daumeditoritor/images/icon/editor/btn_cancel.gif?rv=1.0.1" alt=""/>
 							</div>
 						</div>
 					</li>
@@ -405,7 +405,7 @@
 			<!-- 편집영역 시작 -->
 				<!-- 에디터 Start -->
 	<div id="tx_canvas" class="tx-canvas">
-		<div id="tx_loading" class="tx-loading"><div><img src="/daumeditor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
+		<div id="tx_loading" class="tx-loading"><div><img src="/lib/daumeditoritor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/></div></div>
 		<div id="tx_canvas_wysiwyg_holder" class="tx-holder" style="display:block;">
 			<iframe id="tx_canvas_wysiwyg" name="tx_canvas_wysiwyg" allowtransparency="true" frameborder="0">
 				vkxc;lvkxz;'clvkz';ldvk
@@ -423,11 +423,11 @@
 					<!-- 높이조절 Start -->
 	<div id="tx_resizer" class="tx-resize-bar">
 		<div class="tx-resize-bar-bg"></div>
-		<img id="tx_resize_holder" src="/daumeditor/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
+		<img id="tx_resize_holder" src="/lib/daumeditoritor/images/icon/editor/skin/01/btn_drag01.gif" width="58" height="12" unselectable="on" alt="" />
 	</div>
 					<div class="tx-side-bi" id="tx_side_bi">
 		<div style="text-align: right;">
-			<img hspace="4" height="14" width="78" align="absmiddle" src="/daumeditor/images/icon/editor/editor_bi.png" />
+			<img hspace="4" height="14" width="78" align="absmiddle" src="/lib/daumeditoritor/images/icon/editor/editor_bi.png" />
 		</div>
 	</div>
 				<!-- 편집영역 끝 -->
@@ -437,7 +437,7 @@
 		<div id="tx_attach_txt" class="tx-attach-txt">파일 첨부</div>
 		<div id="tx_attach_box" class="tx-attach-box">
 			<div class="tx-attach-box-inner">
-				<div id="tx_attach_preview" class="tx-attach-preview"><p></p><img src="/daumeditor/images/icon/editor/pn_preview.gif" width="147" height="108" unselectable="on"/></div>
+				<div id="tx_attach_preview" class="tx-attach-preview"><p></p><img src="/lib/daumeditoritor/images/icon/editor/pn_preview.gif" width="147" height="108" unselectable="on"/></div>
 				<div class="tx-attach-main">
 					<div id="tx_upload_progress" class="tx-upload-progress"><div>0%</div><p>파일을 업로드하는 중입니다.</p></div>
 					<ul class="tx-attach-top">

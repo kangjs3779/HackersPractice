@@ -1,6 +1,4 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT']."/key.php";
-
 //해당 정보 조회
 if($_SESSION['result'] == 'success') {
     //로그인에 성공한 사용자이면
@@ -8,7 +6,6 @@ if($_SESSION['result'] == 'success') {
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_array($result);
 }
-
 ?>
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
@@ -42,11 +39,11 @@ if($_SESSION['result'] == 'success') {
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호</th>
-							<td><input id="pw-input" value="<?= $_SESSION['password']?>" type="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
+							<td><input id="modi-pw-input" value="<?= $_SESSION['password']?>" type="password" class="input-text" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-							<td><input id="pw-check-input" type="password" class="input-text" style="width:302px"/></td>
+							<td><input id="modi-pw-check-input" type="password" class="input-text" style="width:302px"/></td>
 						</tr>
 						<tr>
 							<th scope="col"><span class="icons">*</span>이메일주소</th>
@@ -135,7 +132,5 @@ if($_SESSION['result'] == 'success') {
 	</div>
 </div>
 
-<script src="/js/join/daumPostCode.js"></script>
-<script src="/js/member/modifyForm.js"></script>
-<script src="/js/member/ajax/modifyAjax.js"></script>
+<script src="/js/member/memberAjax.js?t=<?= time()?>"></script>
 

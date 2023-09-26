@@ -31,11 +31,11 @@
 					<tbody>
 						<tr>
 							<th scope="col">신규 비밀번호 입력</th>
-							<td><input type="password" id="pw-input" class="input-text" placeholder="영문자로 시작하는 4~15자의 영문소문자,숫자" style="width:302px" /></td>
+							<td><input type="password" id="findPW-input" class="input-text" placeholder="영문자로 시작하는 4~15자의 영문소문자,숫자" style="width:302px" /></td>
 						</tr>
 						<tr>
 							<th scope="col">신규 비밀번호 재확인</th>
-							<td><input id="pw-check-input" type="password" class="input-text" style="width:302px" /></td>
+							<td><input id="findPW-check-input" type="password" class="input-text" style="width:302px" /></td>
 						</tr>
 					</tbody>
 				</table>
@@ -47,5 +47,5 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="/js/find/passwordResetForm.js"></script>
+<script type="text/javascript" src="/js/member/memberAjax.js"></script>
 

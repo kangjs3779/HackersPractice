@@ -20,27 +20,27 @@
                         <col style="*"/>
                     </colgroup>
                     <tbody>
-                    <form action="/process/admin/putProcess.php" enctype="multipart/form-data" method="post" id="putLectureForm">
+                    <form enctype="multipart/form-data">
                         <tr>
                             <th scope="col"><span class="icons">*</span>강의 제목</th>
-                            <td><input name="title" type="text" class="input-text" style="width:302px"/></td>
+                            <td><input id="title" type="text" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>강사 이름</th>
-                            <td><input name="teacher" type="text" class="input-text" style="width:302px"/></td>
+                            <td><input id="teacher" type="text" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>학습 난이도</th>
-                            <td><input name="level" type="text" class="input-text" style="width:302px" /></td>
+                            <td><input id="level" type="text" class="input-text" style="width:302px" /></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>썸네일</th>
-                            <td><input name="mainPhoto" type="file" class="input-text" style="width:302px"/></td>
+                            <td><input id="mainPhoto" type="file" class="input-text" style="width:302px"/></td>
                         </tr>
                         <tr>
                             <th scope="col"><span class="icons">*</span>분류</th>
                             <td>
-                                <select name="categorization" class="input-sel" style="width:160px">
+                                <select id="categorization" class="input-sel" style="width:160px">
                                     <option value="1">일반직무</option>
                                     <option value="2">산업직무</option>
                                     <option value="3">공통역량</option>
@@ -50,17 +50,19 @@
                         </tr>
                         <tr>
                             <th scope="col">관리자 ID</th>
-                            <td><input readonly value="<?= $_SESSION['authorityId']?>" name="authorityId" type="text" class="input-text" style="width:302px"/></td>
+                            <td><input readonly value="<?= $_SESSION['authorityId']?>" id="authorityId" type="text" class="input-text" style="width:302px"/></td>
                         </tr>
                     </form>
                     </tbody>
                 </table>
                 <div class="box-btn">
-                    <button class="btn-l" form="putLectureForm">강의 등록</button>
+                    <button class="btn-l" id="put-btn" type="button">강의 등록</button>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
+
+<script src="/js/admin/lectureAjax.js"></script>
 

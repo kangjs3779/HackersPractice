@@ -478,15 +478,15 @@ Aqua Auth 컨텐츠의 녹화차단 - Aqua Director 컨텐츠의 다운로드 DR
 			</div>
 
 			<div class="box-btn">
-<!--				<a href="/member/index.php?mode=step_02" class="btn-l" id="next-step-btn">다음단계 (휴대폰인증)</a>-->
-				<a href="/practice/member/index.php?mode=step_02" class="btn-l" id="next-step-btn">다음단계 (휴대폰인증)</a>
+				<a href="/member/index.php?mode=step_02" class="btn-l" id="next-step-btn">다음단계 (휴대폰인증)</a>
+<!--				<a href="/practice/member/index.php?mode=step_02" class="btn-l" id="next-step-btn">다음단계 (휴대폰인증)</a>-->
 			</div>
 
 		</div>
 	</div>
 </div>
 
-<!--<script src="/js/join/step01Agree.js"></script>-->
-<script src="/practice/js/join/step01Agree.js"></script>
+<script src="/js/member/memberAjax.js"></script>
+<!--<script src="/practice/js/join/step01Agree.js"></script>-->
 
 

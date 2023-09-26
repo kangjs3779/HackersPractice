@@ -1,4 +1,11 @@
+<?php
 
+$lectureId = $_GET['lectureId'];
+
+$sql = "SELECT * FROM lecture WHERE id = {$lectureId}";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_array($result);
+?>
 
 <div id="content" class="content" style="width: 1000px; margin: auto;">
     <div class="tit-box-h3">
@@ -43,17 +50,12 @@
 
             ?>
             <a href="/admin/index.php?mode=modify&lectureId=<?= $_GET['lectureId'] ?>" class="btn-m ml5">수정</a>
-            <a href="/admin/index.php?mode=delete&lectureId=<?= $_GET['lectureId'] ?>" id="delete-btn"
-               class="btn-m-dark">삭제</a>
+            <a lecture-id="<?=$_GET['lectureId']?>" id="delete-btn" class="btn-m-dark">삭제</a>
             <?php
         }
         ?>
     </div>
 </div>
 </div>
-<script>
-    $("#delete-btn").click(function () {
-        alert("후기를 삭제하시겠습니까?");
-    })
-</script>
+<script src="/js/admin/lectureAjax.js"></script>
 

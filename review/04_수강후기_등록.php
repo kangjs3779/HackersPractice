@@ -103,7 +103,7 @@
 
     <div class="editor-wrap">
         <?php
-        include_once($_SERVER['DOCUMENT_ROOT'] . "/daumEditor/editor.php");
+        include_once($_SERVER['DOCUMENT_ROOT'] . "/daumeditor/editor.php");
         ?>
     </div>
 

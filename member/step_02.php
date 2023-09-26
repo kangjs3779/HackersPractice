@@ -45,6 +45,7 @@
 </div>
 
 <!--    <script src="/js/join/step02VeriCode.js?t=--><?php //=time()?><!--"></script>-->
-<script src="/practice/js/join/step02VeriCode.js"></script>
+<!--<script src="/practice/js/join/step02VeriCode.js"></script>-->
 <!--	<script src="/js/join/ajax/step02Ajax.js?t=--><?php //=time()?><!--"></script>-->
-<script src="/practice/js/join/ajax/step02Ajax.js"></script>
+<!--<script src="/practice/js/join/ajax/step02Ajax.js"></script>-->
+<script src="/js/member/memberAjax.js"></script>
