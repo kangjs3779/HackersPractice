@@ -56,5 +56,4 @@ $plainPw = $_POST['password'];
 
 verifyProcess($plainPw, $username, $conn);
 
-
-
+print_r($_SERVER);

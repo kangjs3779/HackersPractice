@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Daum Editor - Demo</title>
-    <link rel="stylesheet" href="css/editor.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="/lib/daumeditor/css/editor.css" type="text/css" charset="utf-8"/>
 </head>
 <body>
 <div class="body">
@@ -16,15 +16,15 @@
 <div>
     <button onclick="saveContent()">Submit Content</button>
 </div>
-<script src="js/editor_loader.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/editor_creator.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/daumeditor/js/editor_loader.js" type="text/javascript" charset="utf-8"></script>
+<script src="/lib/daumeditor/js/editor_creator.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
     var config = {
         initializedId: "",
         wrapper: "tx_trex_container",
         form: 'tx_editor_form',
-        txIconPath: "images/icon/editor/",
-        txDecoPath: "images/deco/contents/",
+        txIconPath: "/lib/daumeditor/images/icon/editor/",
+        txDecoPath: "/lib/daumeditor/images/deco/contents/",
         events: {
             preventUnload: false
         },

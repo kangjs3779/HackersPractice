@@ -164,12 +164,12 @@
                     if (isset($_SESSION['memberId']) && isset($_SESSION['password'])) {
                         $memberId = $_SESSION['memberId'];
                         //로그인 후
-                        echo "<a href='/process/logoutProcess.php'>로그아웃</a>";
+                        echo "<a href='/login/index.php?mode=logout'>로그아웃</a>";
                         echo "<a href='/member/index.php?mode=modify'>내정보</a>";
                         echo "<a href='#'>상담/고객센터</a>";
                     } else {
                         //로그인 전
-                        echo "<a href='/member/index.php?mode=login'>로그인</a>";
+                        echo "<a href='/login/index.php?mode=login'>로그인</a>";
                         echo "<a href='/member/index.php?mode=step_01'>회원가입</a>";
                         echo "<a href='#'>상담/고객센터</a>";
                     }

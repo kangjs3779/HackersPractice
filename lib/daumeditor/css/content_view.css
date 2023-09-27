@@ -1,2 +1,4 @@
-@import url(container.css);
-@import url(tool.css);
+/*@import url(container.css);*/
+/*@import url(tool.css);*/
+@import url(trex/viewer/container.css);
+@import url(trex/viewer/tool.css);

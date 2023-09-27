@@ -1,3 +1,58 @@
+<?php
+//리뷰 리스트 페이지 정보 조회
+$category = [
+    1 => '일반',
+    2 => '산업',
+    3 => '공통',
+    4 => '어학'
+];
+
+//후기 리스트 (베스트 제외하고 출력)
+$sql = "SELECT *
+            FROM review
+                 JOIN member ON review.memberId = member.id
+                 JOIN lecture ON review.lectureId = lecture.id
+                 LEFT JOIN (
+                    SELECT id
+                    FROM review
+                    ORDER BY view DESC
+                    LIMIT 3
+                ) AS bestReview ON review.id = bestReview.id
+        WHERE bestReview.id IS NULL
+        ORDER BY review.inserted DESC
+        LIMIT {$paginationArr['startIndex']}, {$paginationArr['listCount']}";
+
+$result = mysqli_query($conn, $sql);
+$record = array();
+$resultNumRow = mysqli_num_rows($result);
+
+//베스트 제외 카테고리를 한글로 바꿔줌
+for ($i = 0; $i < $resultNumRow; $i++) {
+    $row = mysqli_fetch_array($result);
+    $record[$i] = $row;
+    $record[$i][22] = $category[$record[$i][22]];
+}
+
+
+//베스트 뽑기
+$bestSQL = "SELECT * FROM review
+                      JOIN member ON review.memberId = member.id
+                      JOIN lecture ON review.lectureId = lecture.id
+                ORDER BY review.view DESC
+                LIMIT 3
+               ";
+
+$bestresult = mysqli_query($conn, $bestSQL);
+$bestRecord = array();
+
+
+//베스트 카테고리를 한글로 바꿔줌
+for ($i = 0; $i < mysqli_num_rows($bestresult); $i++) {
+    $bestRow = mysqli_fetch_array($bestresult);
+    $bestRecord[$i] = $bestRow;
+    $bestRecord[$i][22] = $category[$bestRecord[$i][22]];
+}
+?>
 <div id="content" class="content">
     <div class="tit-box-h3">
         <h3 class="tit-h3">수강후기</h3>
@@ -56,6 +111,7 @@
 
         <tbody id="list-body">
         <!-- set -->
+        <!-- best 목록 -->
         <?php
         if ($_GET['page'] == 1 || !isset($_GET['page'])) {
             for ($i = 0; $i < 3; $i++) {
@@ -79,11 +135,11 @@
                 <?php
             }
         }
-
         ?>
 
         <!-- //set -->
         <!-- set -->
+        <!-- 일반 목록 -->
         <?php
         for ($i = 0; $i < $resultNumRow; $i++) {
             ?>
@@ -110,7 +166,7 @@
         <!-- //set -->
         </tbody>
     </table>
-
+    <!--페이지네이션-->
     <div class="box-paging">
         <?php
         echo '<a href="/review/index.php?mode=list&page=1"><i class="icon-first"><span class="hidden">첫페이지</span></i></a>';
@@ -135,6 +191,5 @@
     ?>
 </div>
 </div>
-<script type="text/javascript" src="/js/review/ajax/searchReview.js"></script>
-<script src="/js/review/ajax/categoryTab.js"></script>
+<script src="/js/review/reviewAjax.js"></script>
 

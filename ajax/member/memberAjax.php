@@ -318,10 +318,10 @@ if ($_POST['mode'] == 'find-PW-reset') {
     $check = false;
 
     $sql = "UPDATE member
-        SET
-            password = '{$newPasswordHash}'
-        WHERE
-            id = {$memberId}";
+            SET
+                password = '{$newPasswordHash}'
+            WHERE
+                id = {$memberId}";
 
     $result = mysqli_query($conn, $sql);
 

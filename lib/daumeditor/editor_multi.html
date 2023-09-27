@@ -21,8 +21,8 @@
 		에디터 리소스들을 로딩하는 부분으로, 경로가 변경되면 이 부분 수정이 필요.
 		주의: 서비스에 이용시 loader 에 붙은 environment=development 값을 제거해야 브라우저 캐시를 사용할 수 있습니다.
 	-->
-	<link rel="stylesheet" href="css/editor.css" type="text/css" charset="utf-8"/>
-    <script src="js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/lib/daumeditor/css/editor.css" type="text/css" charset="utf-8"/>
+    <script src="/lib/daumeditor/js/editor_loader.js?environment=development" type="text/javascript" charset="utf-8"></script>
 
 </head>
 <body>
@@ -498,8 +498,8 @@
 		initializedId: "2", /* 대부분의 경우에 빈문자열 */
 		wrapper: "tx_trex_container2", /* 에디터를 둘러싸고 있는 레이어 이름(에디터 컨테이너) */
 		form: "tx_editor_form2"+"", /* 등록하기 위한 Form 이름 */
-		txIconPath: "images/icon/editor/", /*에디터에 사용되는 이미지 디렉터리, 필요에 따라 수정한다. */
-		txDecoPath: "images/deco/contents/", /*본문에 사용되는 이미지 디렉터리, 서비스에서 사용할 때는 완성된 컨텐츠로 배포되기 위해 절대경로로 수정한다. */
+		txIconPath: "/lib/daumeditor/images/icon/editor/", /*에디터에 사용되는 이미지 디렉터리, 필요에 따라 수정한다. */
+		txDecoPath: "/lib/daumeditor/images/deco/contents/", /*본문에 사용되는 이미지 디렉터리, 서비스에서 사용할 때는 완성된 컨텐츠로 배포되기 위해 절대경로로 수정한다. */
 		canvas: {
 			styles: {
 				color: "#123456", /* 기본 글자색 */
@@ -520,7 +520,7 @@
 			},
 			attacher: {
 				file: {
-					popPageUrl: "pages/trex/file.html?config=2"
+					popPageUrl: "/lib/daumeditor/pages/trex/file.html?config=2"
 				}
 			}
 		},
@@ -951,7 +951,7 @@
 			<div id="tx_canvas3" class="tx-canvas">
 				<div id="tx_loading3" class="tx-loading">
 					<div>
-						<img src="images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/>
+						<img src="/lib/daumeditor/images/icon/editor/loading2.png" width="113" height="21" align="absmiddle"/>
 					</div>
 				</div>
 				<div id="tx_canvas_wysiwyg_holder3" class="tx-holder" style="display:block;">

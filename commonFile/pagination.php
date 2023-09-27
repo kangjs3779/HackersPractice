@@ -13,7 +13,11 @@ $totalPage = 0; //필요한 페이지네이션의 수
 //페이지네이션 로직 함수
 function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginationBlock, $isBest)
 {
-
+    //$totalRecordCount를 구함
+//    $recordCountResult = mysqli_query($conn, $totalRecordQeury);
+//    $totalRecordCount = mysqli_fetch_array($recordCountResult)[0];
+//
+//    print_r($totalRecordCount);
     //DB의 시작 인덱스 구하는 식
     $startIndex = ($currentPage - 1) * $listCount;
     $totalPage = $totalRecordCount % $listCount == 0 ? $totalRecordCount / $listCount : ceil(($totalRecordCount / $listCount));
@@ -82,7 +86,7 @@ function paginationProcess($listCount, $totalRecordCount, $currentPage, $paginat
     return $paginationArr;
 }
 
-if (strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'view') {
+if (strpos($_SERVER['SCRIPT_FILENAME'], 'review')) {
     // 수강 후기 상세 페이지라면?
 
     $totalRecordQeury = "SELECT COUNT(*)
@@ -92,31 +96,19 @@ if (strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'view') {
 
     $recordCountResult = mysqli_query($conn, $totalRecordQeury);
     $totalRecordCount = mysqli_fetch_array($recordCountResult)[0];
-    $isBest = false;
+    $isBest = $_GET['mode'] == 'view' ? false : true;
+    $listCount = $_GET['mode'] == 'view' ? 5 : 20;
 
-    $paginationArr = paginationProcess(5, $totalRecordCount, $currentPage, $paginationBlock, $isBest);
+    $paginationArr = paginationProcess($listCount, $totalRecordCount, $currentPage, $paginationBlock, $isBest);
 
-} else if (strpos($_SERVER['SCRIPT_FILENAME'], 'review') && $_GET['mode'] == 'list') {
-    // 수강 후기 리스트 페이지라면?
+}
 
-    $totalRecordQeury = "SELECT COUNT(*)
-                         FROM review
-                            JOIN member ON review.memberId = member.id
-                            JOIN lecture ON review.lectureId = lecture.id
-                         ";
-
-    $recordCountResult = mysqli_query($conn, $totalRecordQeury);
-    $totalRecordCount = mysqli_fetch_array($recordCountResult)[0];
-    $isBest = true;
-    
-    $paginationArr = paginationProcess(20, $totalRecordCount, $currentPage, $paginationBlock, $isBest);
-} else if (strpos($_SERVER['SCRIPT_FILENAME'], 'admin') && $_GET['mode'] == 'list') {
+if (strpos($_SERVER['SCRIPT_FILENAME'], 'admin')) {
     //관리자페이지 강의 리스트라면?
 
     $totalRecordQeury = "SELECT COUNT(*) 
                          FROM lecture 
-                             JOIN authority ON lecture.authorityId = authority.id 
-                         ORDER BY lecture.inserted DESC";
+                             JOIN authority ON lecture.authorityId = authority.id";
     $recordCountResult = mysqli_query($conn, $totalRecordQeury);
     $totalRecordCount = mysqli_fetch_array($recordCountResult)[0];
     $isBest = false;

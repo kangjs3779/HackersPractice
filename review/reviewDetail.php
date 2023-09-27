@@ -1,4 +1,39 @@
+<?php
+$reviewId = $_GET['reviewId'];
 
+$detailSQL = "SELECT * FROM review 
+            JOIN member on review.memberId = member.id
+            JOIN lecture on review.lectureId = lecture.id
+        WHERE review.id = {$reviewId}";
+
+$detailResult = mysqli_query($conn, $detailSQL);
+$detailRow = mysqli_fetch_array($detailResult);
+
+
+if($_GET['mode'] == 'view') {
+    //수강 후기 상세페이지 조회를 하면 조회수 올라감
+    $viewSQL = "UPDATE review SET view = view + 1 WHERE id = {$reviewId}";
+    $viewResult = mysqli_query($conn, $viewSQL);
+}
+
+$sql = "SELECT *
+                FROM review
+                     JOIN member ON review.memberId = member.id
+                     JOIN lecture ON review.lectureId = lecture.id
+            ORDER BY review.inserted DESC
+            LIMIT {$paginationArr['startIndex']}, {$paginationArr['listCount']}";
+
+$result = mysqli_query($conn, $sql);
+$record = array();
+$resultNumRow = mysqli_num_rows($result);
+
+//카테고리를 한글로 바꿔줌
+for ($i = 0; $i < $resultNumRow; $i++) {
+    $row = mysqli_fetch_array($result);
+    $record[$i] = $row;
+    $record[$i][22] = $category[$record[$i][22]];
+}
+?>
 <div id="skip-nav">
 <a href="#content">본문 바로가기</a>
 </div>
@@ -21,8 +56,8 @@
 			</colgroup>
 			<tbody>
 				 <tr>
-					<th scope="col"><?= $row[3] ?></th>
-					<th scope="col" class="user-id">작성자 | <?= $row['username'] ?></th>
+					<th scope="col"><?= $detailRow[3] ?></th>
+					<th scope="col" class="user-id">작성자 | <?= $detailRow['username'] ?></th>
 				 </tr>
 				<tr>
 					<td colspan="2">
@@ -34,7 +69,7 @@
 						</div>
                         <br/><br/>
                         <p>
-                            <?= $row['content'] ?>
+                            <?= $detailRow['content'] ?>
                         </p>
 					</td>
 				</tr>
@@ -42,7 +77,7 @@
 		</table>
 
 
-		<p class="mb15"><strong class="tc-brand fs16"><?= $row['username'] ?>님의 수강하신 강의 정보</strong></p>
+		<p class="mb15"><strong class="tc-brand fs16"><?= $detailRow['username'] ?>님의 수강하신 강의 정보</strong></p>
 
 		<table border="0" cellpadding="0" cellspacing="0" class="tbl-lecture-list">
 			<caption class="hidden">강의정보</caption>
@@ -55,13 +90,13 @@
 				<tr>
 					<td>
 						<a href="#" class="sample-lecture">
-							<img src="<?='/img/lectureMainPhoto/'.$row['lectureId']."/".$row['mainPhoto']?>" alt="" width="144" height="101" />
+							<img src="<?='/img/lectureMainPhoto/'.$detailRow['lectureId']."/".$detailRow['mainPhoto']?>" alt="" width="144" height="101" />
 							<span class="tc-brand">샘플강의 ▶</span>
 						</a>
 					</td>
 					<td class="lecture-txt">
-						<em class="tit mt10"><?=$row[23]?></em>
-						<p class="tc-gray mt20">강사: <?=$row['teacher']?> | 학습난이도 : <?=$row['teacher']?> | 교육시간: 18시간 (18강)</p>
+						<em class="tit mt10"><?=$detailRow[23]?></em>
+						<p class="tc-gray mt20">강사: <?=$detailRow['teacher']?> | 학습난이도 : <?=$detailRow['teacher']?> | 교육시간: 18시간 (18강)</p>
 					</td>
 					<td class="t-r"><a href="#" class="btn-square-line">강의<br />상세</a></td>
 				</tr>
@@ -71,11 +106,11 @@
 		<div class="box-btn t-r">
 			<a href="/review/index.php?mode=list" class="btn-m-gray">목록</a>
             <?php
-                if($_SESSION['memberId'] == $row['memberId']) {
+                if($_SESSION['memberId'] == $detailRow['memberId']) {
 
             ?>
                     <a href="/review/index.php?mode=modify&reviewId=<?=$_GET['reviewId']?>" class="btn-m ml5">수정</a>
-                    <a href="/review/index.php?mode=delete&reviewId=<?=$_GET['reviewId']?>" id="delete-btn" class="btn-m-dark">삭제</a>
+                    <a id="delete-btn" reviewId="<?=$_GET['reviewId']?>" class="btn-m-dark">삭제</a>
             <?php
                 }
             ?>
@@ -157,9 +192,6 @@
 		</div>
 	</div>
 </div>
-<script>
-    $("#delete-btn").click(function () {
-        alert("후기를 삭제하시겠습니까?");
-    })
-</script>
+
+<script src="/js/review/reviewAjax.js"></script>
 

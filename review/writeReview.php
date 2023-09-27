@@ -24,8 +24,8 @@
             <col style="width:15%"/>
             <col style="*"/>
         </colgroup>
-        <form name="tx_editor_form" id="tx_editor_form" action="/process/review/putProcess.php" method="post"
-              accept-charset="utf-8">
+        <form name="tx_editor_form" id="tx_editor_form" action="/ajax/review/reviewAjax.php" method="post" accept-charset="utf-8">
+            <input type="hidden" name="mode" value="write_review">
             <tbody>
             <tr>
                 <th scope="col">강의</th>
@@ -114,4 +114,4 @@
 </div>
 </form>
 </div>
-<script type="text/javascript" src="/js/review/ajax/putReviewForm.js"></script>
+<script type="text/javascript" src="/js/review/reviewAjax.js"></script>

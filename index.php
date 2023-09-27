@@ -3,6 +3,8 @@
 session_start();
 include_once "./commonFile/header.php";
 //include_once "./commonFile/script.php";
+
+//print_r($_SERVER);
 ?>
 <div id="container">
 	<div class="main-slider-applyclass">

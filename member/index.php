@@ -2,7 +2,7 @@
 // 모든 member include는 여기에 작성할 것
 session_start();
 include_once $_SERVER['DOCUMENT_ROOT'] . "/key.php";
-print_r($_SESSION);
+//print_r($_SESSION);
 
 //파라미터 값 가져오기
 $mode = $_GET['mode'];
@@ -17,8 +17,7 @@ $modeActions = [
     'find_id_complete' => '/member/find_id_complete.php',
     'find_pass' => '/member/find_pass.php',
     'find_pass_complete' => '/member/find_pass_complete.php',
-    'modify' => '/member/modify.php',
-    'login' => '/member/login.php'
+    'modify' => '/member/modify.php'
 ];
 
 //fileName변수에 mode값에 해당하는 파일이름을 넣어줌

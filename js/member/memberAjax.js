@@ -546,7 +546,7 @@ $("#reset-btn").click(function() {
     if(!findPWCheck) {
         alert("비밀번호 확인이 되지 않았습니다.");
     } else {
-        let password = $("#pw-input").val();
+        let password = $("#findPW-input").val();
 
         let data = {
             mode: 'find-PW-reset',
