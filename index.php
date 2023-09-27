@@ -1,10 +1,7 @@
 
 <?php
 session_start();
-include_once "./commonFile/header.php";
-//include_once "./commonFile/script.php";
-
-//print_r($_SERVER);
+include_once $_SERVER['DOCUMENT_ROOT'] ."/commonFile/header.php";
 ?>
 <div id="container">
 	<div class="main-slider-applyclass">
@@ -378,5 +375,5 @@ $(document).ready(function(){
 </script>
 </div>
 
-<?php include_once "./commonFile/footer.php";?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] ."/commonFile/footer.php";?>
 

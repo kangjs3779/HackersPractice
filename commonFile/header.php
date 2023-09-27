@@ -24,8 +24,9 @@
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/common.css"/>
     <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/bxslider.css"/>
 
-    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/main.css"/><!-- main페이지에만 호출 -->
-    <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/sub.css"/><!-- sub페이지에만 호출 -->
+    <?= isset($_GET['mode']) ?
+        '<link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/sub.css"/>' :
+        ' <link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/main.css"/>'?>
     <?= $_GET['mode'] == 'login' ? '<link type="text/css" rel="stylesheet" href="http://q.hackershrd.com/worksheet/css/login.css"/>' : ''?>
 
     <script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/jquery-1.12.4.min.js"></script>
