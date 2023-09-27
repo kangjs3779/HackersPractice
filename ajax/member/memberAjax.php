@@ -150,7 +150,7 @@ if ($_POST['mode'] == 'modify') {
     $username = $_POST['username'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $homeNumber = $_POST['homeNumber'];
+    $homeNumber = $_POST['homeNum'];
     $postcode = $_POST['postcode'];
     $address = $_POST['roadAddress'];
     $detailAddress = $_POST['extraAddress'];

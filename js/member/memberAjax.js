@@ -383,7 +383,7 @@ $("#modify-btn").click(function () {
             data: data,
             success: function (data) {
                 if(data.result) {
-                    window.location.replace("http://practice.hackers.com/process/logoutProcess.php");
+                    window.location.replace("http://practice.hackers.com/login/index.php?mode=logout");
                 } else {
                     alert("정보를 바르게 입력해주세요.");
                 }
@@ -559,7 +559,7 @@ $("#reset-btn").click(function() {
             success: function (data) {
                 if(data.check) {
 
-                    window.location.replace("http://practice.hackers.com/member/index.php?mode=login");
+                    window.location.replace("/login/index.php?mode=login");
                 }
             }
         })
