@@ -26,7 +26,6 @@ function verifyProcess($plainPw, $username, $conn){
         findAuthority($row['id'], $conn);
 
         header('Location: http://practice.hackers.com/');
-//        header('Location: http://localhost:63342/practice/index.php/');
 
     } else {
         //로그인 실패 시
@@ -56,4 +55,3 @@ $plainPw = $_POST['password'];
 
 verifyProcess($plainPw, $username, $conn);
 
-print_r($_SERVER);

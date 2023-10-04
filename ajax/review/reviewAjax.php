@@ -25,9 +25,6 @@ if ($_POST['mode'] == 'modify_review') {
     $result = mysqli_query($conn, $sql);
     $check = false;
 
-    if ($result) {
-        header("Location: " . $_SERVER['HTTP_ORIGIN'] . "/review/index.php?mode=view&reviewId=" . $reviewId);
-    }
 }
 
 //수강 후기 등록할 때
@@ -49,6 +46,9 @@ if ($_POST['mode'] == 'write_review') {
     $result = mysqli_query($conn, $sql);
     $lastId = mysqli_insert_id($conn);
 
+}
+
+if($_POST['mode'] == 'modify_review' || $_POST['mode'] == 'write_review') {
     if ($result) {
         header("Location: " . $_SERVER['HTTP_ORIGIN'] . "/review/index.php?mode=view&reviewId=" . $lastId);
     }
@@ -63,13 +63,11 @@ if ($_POST['mode'] == 'delete_review') {
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
-        $responseData = [
+        $record = [
             'result' => true
         ];
     }
 
-    header('Content-Type: application/json');
-    echo json_encode($responseData);
 }
 
 
@@ -94,12 +92,6 @@ if ($_GET['mode'] == 'category_tab_search') {
         $record[$i] = $row;
     }
 
-    //http header에 정보를 보내준다
-    //application/json타입으로 보내준다
-    header('Content-Type: application/json');
-
-    //해당 데이터를 json으로 변환한다
-    echo json_encode($record);
 }
 
 //후기 등록/수정 시 분류에 따른 강의 조회
@@ -117,12 +109,6 @@ if ($_GET['mode'] == 'category_lecture') {
         $record[$i] = $row;
     }
 
-    //http header에 정보를 보내준다
-    //application/json타입으로 보내준다
-    header('Content-Type: application/json');
-
-    //해당 데이터를 json으로 변환한다
-    echo json_encode($record);
 }
 
 if($_POST['mode'] == 'search_input') {
@@ -152,7 +138,14 @@ if($_POST['mode'] == 'search_input') {
         $record[$i] = $row;
     }
 
+}
 
+if(
+    $_POST['mode'] == 'delete_review' ||
+    $_GET['mode'] == 'category_tab_search' ||
+    $_GET['mode'] == 'category_lecture' ||
+    $_POST['mode'] == 'search_input'
+) {
     //http header에 정보를 보내준다
     //application/json타입으로 보내준다
     header('Content-Type: application/json');
